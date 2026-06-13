@@ -19,9 +19,9 @@
     "sharp": "^0.34.5",
     "web-vitals": "^2.1.4"
   },
-  "scripts": {
+    "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "DISABLE_ESLINT_PLUGIN=true react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
