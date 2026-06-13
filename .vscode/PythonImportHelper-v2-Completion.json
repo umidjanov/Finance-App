@@ -1,0 +1,1796 @@
+[
+    {
+        "label": "Limiter",
+        "importPath": "slowapi",
+        "description": "slowapi",
+        "isExtraImport": true,
+        "detail": "slowapi",
+        "documentation": {}
+    },
+    {
+        "label": "_rate_limit_exceeded_handler",
+        "importPath": "slowapi",
+        "description": "slowapi",
+        "isExtraImport": true,
+        "detail": "slowapi",
+        "documentation": {}
+    },
+    {
+        "label": "get_remote_address",
+        "importPath": "slowapi.util",
+        "description": "slowapi.util",
+        "isExtraImport": true,
+        "detail": "slowapi.util",
+        "documentation": {}
+    },
+    {
+        "label": "RateLimitExceeded",
+        "importPath": "slowapi.errors",
+        "description": "slowapi.errors",
+        "isExtraImport": true,
+        "detail": "slowapi.errors",
+        "documentation": {}
+    },
+    {
+        "label": "RateLimitExceeded",
+        "importPath": "slowapi.errors",
+        "description": "slowapi.errors",
+        "isExtraImport": true,
+        "detail": "slowapi.errors",
+        "documentation": {}
+    },
+    {
+        "label": "Request",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "APIRouter",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "Depends",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "HTTPException",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "APIRouter",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "Depends",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "HTTPException",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "Request",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "UploadFile",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "File",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "APIRouter",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "Depends",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "HTTPException",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "APIRouter",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "Depends",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "HTTPException",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "APIRouter",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "Depends",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "Request",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "APIRouter",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "Depends",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "HTTPException",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "APIRouter",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "Depends",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "FastAPI",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "Request",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "JSONResponse",
+        "importPath": "fastapi.responses",
+        "description": "fastapi.responses",
+        "isExtraImport": true,
+        "detail": "fastapi.responses",
+        "documentation": {}
+    },
+    {
+        "label": "StreamingResponse",
+        "importPath": "fastapi.responses",
+        "description": "fastapi.responses",
+        "isExtraImport": true,
+        "detail": "fastapi.responses",
+        "documentation": {}
+    },
+    {
+        "label": "Column",
+        "importPath": "sqlalchemy",
+        "description": "sqlalchemy",
+        "isExtraImport": true,
+        "detail": "sqlalchemy",
+        "documentation": {}
+    },
+    {
+        "label": "Integer",
+        "importPath": "sqlalchemy",
+        "description": "sqlalchemy",
+        "isExtraImport": true,
+        "detail": "sqlalchemy",
+        "documentation": {}
+    },
+    {
+        "label": "String",
+        "importPath": "sqlalchemy",
+        "description": "sqlalchemy",
+        "isExtraImport": true,
+        "detail": "sqlalchemy",
+        "documentation": {}
+    },
+    {
+        "label": "DateTime",
+        "importPath": "sqlalchemy",
+        "description": "sqlalchemy",
+        "isExtraImport": true,
+        "detail": "sqlalchemy",
+        "documentation": {}
+    },
+    {
+        "label": "Boolean",
+        "importPath": "sqlalchemy",
+        "description": "sqlalchemy",
+        "isExtraImport": true,
+        "detail": "sqlalchemy",
+        "documentation": {}
+    },
+    {
+        "label": "Column",
+        "importPath": "sqlalchemy",
+        "description": "sqlalchemy",
+        "isExtraImport": true,
+        "detail": "sqlalchemy",
+        "documentation": {}
+    },
+    {
+        "label": "Integer",
+        "importPath": "sqlalchemy",
+        "description": "sqlalchemy",
+        "isExtraImport": true,
+        "detail": "sqlalchemy",
+        "documentation": {}
+    },
+    {
+        "label": "String",
+        "importPath": "sqlalchemy",
+        "description": "sqlalchemy",
+        "isExtraImport": true,
+        "detail": "sqlalchemy",
+        "documentation": {}
+    },
+    {
+        "label": "Float",
+        "importPath": "sqlalchemy",
+        "description": "sqlalchemy",
+        "isExtraImport": true,
+        "detail": "sqlalchemy",
+        "documentation": {}
+    },
+    {
+        "label": "DateTime",
+        "importPath": "sqlalchemy",
+        "description": "sqlalchemy",
+        "isExtraImport": true,
+        "detail": "sqlalchemy",
+        "documentation": {}
+    },
+    {
+        "label": "ForeignKey",
+        "importPath": "sqlalchemy",
+        "description": "sqlalchemy",
+        "isExtraImport": true,
+        "detail": "sqlalchemy",
+        "documentation": {}
+    },
+    {
+        "label": "Enum",
+        "importPath": "sqlalchemy",
+        "description": "sqlalchemy",
+        "isExtraImport": true,
+        "detail": "sqlalchemy",
+        "documentation": {}
+    },
+    {
+        "label": "Index",
+        "importPath": "sqlalchemy",
+        "description": "sqlalchemy",
+        "isExtraImport": true,
+        "detail": "sqlalchemy",
+        "documentation": {}
+    },
+    {
+        "label": "Column",
+        "importPath": "sqlalchemy",
+        "description": "sqlalchemy",
+        "isExtraImport": true,
+        "detail": "sqlalchemy",
+        "documentation": {}
+    },
+    {
+        "label": "Integer",
+        "importPath": "sqlalchemy",
+        "description": "sqlalchemy",
+        "isExtraImport": true,
+        "detail": "sqlalchemy",
+        "documentation": {}
+    },
+    {
+        "label": "String",
+        "importPath": "sqlalchemy",
+        "description": "sqlalchemy",
+        "isExtraImport": true,
+        "detail": "sqlalchemy",
+        "documentation": {}
+    },
+    {
+        "label": "Boolean",
+        "importPath": "sqlalchemy",
+        "description": "sqlalchemy",
+        "isExtraImport": true,
+        "detail": "sqlalchemy",
+        "documentation": {}
+    },
+    {
+        "label": "DateTime",
+        "importPath": "sqlalchemy",
+        "description": "sqlalchemy",
+        "isExtraImport": true,
+        "detail": "sqlalchemy",
+        "documentation": {}
+    },
+    {
+        "label": "Float",
+        "importPath": "sqlalchemy",
+        "description": "sqlalchemy",
+        "isExtraImport": true,
+        "detail": "sqlalchemy",
+        "documentation": {}
+    },
+    {
+        "label": "func",
+        "importPath": "sqlalchemy",
+        "description": "sqlalchemy",
+        "isExtraImport": true,
+        "detail": "sqlalchemy",
+        "documentation": {}
+    },
+    {
+        "label": "func",
+        "importPath": "sqlalchemy",
+        "description": "sqlalchemy",
+        "isExtraImport": true,
+        "detail": "sqlalchemy",
+        "documentation": {}
+    },
+    {
+        "label": "extract",
+        "importPath": "sqlalchemy",
+        "description": "sqlalchemy",
+        "isExtraImport": true,
+        "detail": "sqlalchemy",
+        "documentation": {}
+    },
+    {
+        "label": "func",
+        "importPath": "sqlalchemy",
+        "description": "sqlalchemy",
+        "isExtraImport": true,
+        "detail": "sqlalchemy",
+        "documentation": {}
+    },
+    {
+        "label": "func",
+        "importPath": "sqlalchemy",
+        "description": "sqlalchemy",
+        "isExtraImport": true,
+        "detail": "sqlalchemy",
+        "documentation": {}
+    },
+    {
+        "label": "create_engine",
+        "importPath": "sqlalchemy",
+        "description": "sqlalchemy",
+        "isExtraImport": true,
+        "detail": "sqlalchemy",
+        "documentation": {}
+    },
+    {
+        "label": "func",
+        "importPath": "sqlalchemy.sql",
+        "description": "sqlalchemy.sql",
+        "isExtraImport": true,
+        "detail": "sqlalchemy.sql",
+        "documentation": {}
+    },
+    {
+        "label": "func",
+        "importPath": "sqlalchemy.sql",
+        "description": "sqlalchemy.sql",
+        "isExtraImport": true,
+        "detail": "sqlalchemy.sql",
+        "documentation": {}
+    },
+    {
+        "label": "func",
+        "importPath": "sqlalchemy.sql",
+        "description": "sqlalchemy.sql",
+        "isExtraImport": true,
+        "detail": "sqlalchemy.sql",
+        "documentation": {}
+    },
+    {
+        "label": "relationship",
+        "importPath": "sqlalchemy.orm",
+        "description": "sqlalchemy.orm",
+        "isExtraImport": true,
+        "detail": "sqlalchemy.orm",
+        "documentation": {}
+    },
+    {
+        "label": "relationship",
+        "importPath": "sqlalchemy.orm",
+        "description": "sqlalchemy.orm",
+        "isExtraImport": true,
+        "detail": "sqlalchemy.orm",
+        "documentation": {}
+    },
+    {
+        "label": "Session",
+        "importPath": "sqlalchemy.orm",
+        "description": "sqlalchemy.orm",
+        "isExtraImport": true,
+        "detail": "sqlalchemy.orm",
+        "documentation": {}
+    },
+    {
+        "label": "Session",
+        "importPath": "sqlalchemy.orm",
+        "description": "sqlalchemy.orm",
+        "isExtraImport": true,
+        "detail": "sqlalchemy.orm",
+        "documentation": {}
+    },
+    {
+        "label": "Session",
+        "importPath": "sqlalchemy.orm",
+        "description": "sqlalchemy.orm",
+        "isExtraImport": true,
+        "detail": "sqlalchemy.orm",
+        "documentation": {}
+    },
+    {
+        "label": "Session",
+        "importPath": "sqlalchemy.orm",
+        "description": "sqlalchemy.orm",
+        "isExtraImport": true,
+        "detail": "sqlalchemy.orm",
+        "documentation": {}
+    },
+    {
+        "label": "Session",
+        "importPath": "sqlalchemy.orm",
+        "description": "sqlalchemy.orm",
+        "isExtraImport": true,
+        "detail": "sqlalchemy.orm",
+        "documentation": {}
+    },
+    {
+        "label": "Session",
+        "importPath": "sqlalchemy.orm",
+        "description": "sqlalchemy.orm",
+        "isExtraImport": true,
+        "detail": "sqlalchemy.orm",
+        "documentation": {}
+    },
+    {
+        "label": "Session",
+        "importPath": "sqlalchemy.orm",
+        "description": "sqlalchemy.orm",
+        "isExtraImport": true,
+        "detail": "sqlalchemy.orm",
+        "documentation": {}
+    },
+    {
+        "label": "sessionmaker",
+        "importPath": "sqlalchemy.orm",
+        "description": "sqlalchemy.orm",
+        "isExtraImport": true,
+        "detail": "sqlalchemy.orm",
+        "documentation": {}
+    },
+    {
+        "label": "enum",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "enum",
+        "description": "enum",
+        "detail": "enum",
+        "documentation": {}
+    },
+    {
+        "label": "uuid",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "uuid",
+        "description": "uuid",
+        "detail": "uuid",
+        "documentation": {}
+    },
+    {
+        "label": "OAuth2PasswordBearer",
+        "importPath": "fastapi.security",
+        "description": "fastapi.security",
+        "isExtraImport": true,
+        "detail": "fastapi.security",
+        "documentation": {}
+    },
+    {
+        "label": "OAuth2PasswordRequestForm",
+        "importPath": "fastapi.security",
+        "description": "fastapi.security",
+        "isExtraImport": true,
+        "detail": "fastapi.security",
+        "documentation": {}
+    },
+    {
+        "label": "StaticFiles",
+        "importPath": "fastapi.staticfiles",
+        "description": "fastapi.staticfiles",
+        "isExtraImport": true,
+        "detail": "fastapi.staticfiles",
+        "documentation": {}
+    },
+    {
+        "label": "StaticFiles",
+        "importPath": "fastapi.staticfiles",
+        "description": "fastapi.staticfiles",
+        "isExtraImport": true,
+        "detail": "fastapi.staticfiles",
+        "documentation": {}
+    },
+    {
+        "label": "BaseModel",
+        "importPath": "pydantic",
+        "description": "pydantic",
+        "isExtraImport": true,
+        "detail": "pydantic",
+        "documentation": {}
+    },
+    {
+        "label": "EmailStr",
+        "importPath": "pydantic",
+        "description": "pydantic",
+        "isExtraImport": true,
+        "detail": "pydantic",
+        "documentation": {}
+    },
+    {
+        "label": "BaseModel",
+        "importPath": "pydantic",
+        "description": "pydantic",
+        "isExtraImport": true,
+        "detail": "pydantic",
+        "documentation": {}
+    },
+    {
+        "label": "BaseModel",
+        "importPath": "pydantic",
+        "description": "pydantic",
+        "isExtraImport": true,
+        "detail": "pydantic",
+        "documentation": {}
+    },
+    {
+        "label": "Optional",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Optional",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "List",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Optional",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Optional",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "httpx",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "httpx",
+        "description": "httpx",
+        "detail": "httpx",
+        "documentation": {}
+    },
+    {
+        "label": "os",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "os",
+        "description": "os",
+        "detail": "os",
+        "documentation": {}
+    },
+    {
+        "label": "threading",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "threading",
+        "description": "threading",
+        "detail": "threading",
+        "documentation": {}
+    },
+    {
+        "label": "datetime",
+        "importPath": "datetime",
+        "description": "datetime",
+        "isExtraImport": true,
+        "detail": "datetime",
+        "documentation": {}
+    },
+    {
+        "label": "datetime",
+        "importPath": "datetime",
+        "description": "datetime",
+        "isExtraImport": true,
+        "detail": "datetime",
+        "documentation": {}
+    },
+    {
+        "label": "timedelta",
+        "importPath": "datetime",
+        "description": "datetime",
+        "isExtraImport": true,
+        "detail": "datetime",
+        "documentation": {}
+    },
+    {
+        "label": "datetime",
+        "importPath": "datetime",
+        "description": "datetime",
+        "isExtraImport": true,
+        "detail": "datetime",
+        "documentation": {}
+    },
+    {
+        "label": "date",
+        "importPath": "datetime",
+        "description": "datetime",
+        "isExtraImport": true,
+        "detail": "datetime",
+        "documentation": {}
+    },
+    {
+        "label": "datetime",
+        "importPath": "datetime",
+        "description": "datetime",
+        "isExtraImport": true,
+        "detail": "datetime",
+        "documentation": {}
+    },
+    {
+        "label": "datetime",
+        "importPath": "datetime",
+        "description": "datetime",
+        "isExtraImport": true,
+        "detail": "datetime",
+        "documentation": {}
+    },
+    {
+        "label": "datetime",
+        "importPath": "datetime",
+        "description": "datetime",
+        "isExtraImport": true,
+        "detail": "datetime",
+        "documentation": {}
+    },
+    {
+        "label": "datetime",
+        "importPath": "datetime",
+        "description": "datetime",
+        "isExtraImport": true,
+        "detail": "datetime",
+        "documentation": {}
+    },
+    {
+        "label": "timedelta",
+        "importPath": "datetime",
+        "description": "datetime",
+        "isExtraImport": true,
+        "detail": "datetime",
+        "documentation": {}
+    },
+    {
+        "label": "random",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "random",
+        "description": "random",
+        "detail": "random",
+        "documentation": {}
+    },
+    {
+        "label": "smtplib",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "smtplib",
+        "description": "smtplib",
+        "detail": "smtplib",
+        "documentation": {}
+    },
+    {
+        "label": "MIMEText",
+        "importPath": "email.mime.text",
+        "description": "email.mime.text",
+        "isExtraImport": true,
+        "detail": "email.mime.text",
+        "documentation": {}
+    },
+    {
+        "label": "MIMEMultipart",
+        "importPath": "email.mime.multipart",
+        "description": "email.mime.multipart",
+        "isExtraImport": true,
+        "detail": "email.mime.multipart",
+        "documentation": {}
+    },
+    {
+        "label": "requests",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "requests",
+        "description": "requests",
+        "detail": "requests",
+        "documentation": {}
+    },
+    {
+        "label": "JWTError",
+        "importPath": "jose",
+        "description": "jose",
+        "isExtraImport": true,
+        "detail": "jose",
+        "documentation": {}
+    },
+    {
+        "label": "jwt",
+        "importPath": "jose",
+        "description": "jose",
+        "isExtraImport": true,
+        "detail": "jose",
+        "documentation": {}
+    },
+    {
+        "label": "bcrypt",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "bcrypt",
+        "description": "bcrypt",
+        "detail": "bcrypt",
+        "documentation": {}
+    },
+    {
+        "label": "bleach",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "bleach",
+        "description": "bleach",
+        "detail": "bleach",
+        "documentation": {}
+    },
+    {
+        "label": "re",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "re",
+        "description": "re",
+        "detail": "re",
+        "documentation": {}
+    },
+    {
+        "label": "BaseSettings",
+        "importPath": "pydantic_settings",
+        "description": "pydantic_settings",
+        "isExtraImport": true,
+        "detail": "pydantic_settings",
+        "documentation": {}
+    },
+    {
+        "label": "declarative_base",
+        "importPath": "sqlalchemy.ext.declarative",
+        "description": "sqlalchemy.ext.declarative",
+        "isExtraImport": true,
+        "detail": "sqlalchemy.ext.declarative",
+        "documentation": {}
+    },
+    {
+        "label": "CORSMiddleware",
+        "importPath": "fastapi.middleware.cors",
+        "description": "fastapi.middleware.cors",
+        "isExtraImport": true,
+        "detail": "fastapi.middleware.cors",
+        "documentation": {}
+    },
+    {
+        "label": "TrustedHostMiddleware",
+        "importPath": "fastapi.middleware.trustedhost",
+        "description": "fastapi.middleware.trustedhost",
+        "isExtraImport": true,
+        "detail": "fastapi.middleware.trustedhost",
+        "documentation": {}
+    },
+    {
+        "label": "SlowAPIMiddleware",
+        "importPath": "slowapi.middleware",
+        "description": "slowapi.middleware",
+        "isExtraImport": true,
+        "detail": "slowapi.middleware",
+        "documentation": {}
+    },
+    {
+        "label": "BackgroundScheduler",
+        "importPath": "apscheduler.schedulers.background",
+        "description": "apscheduler.schedulers.background",
+        "isExtraImport": true,
+        "detail": "apscheduler.schedulers.background",
+        "documentation": {}
+    },
+    {
+        "label": "CronTrigger",
+        "importPath": "apscheduler.triggers.cron",
+        "description": "apscheduler.triggers.cron",
+        "isExtraImport": true,
+        "detail": "apscheduler.triggers.cron",
+        "documentation": {}
+    },
+    {
+        "label": "json",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "json",
+        "description": "json",
+        "detail": "json",
+        "documentation": {}
+    },
+    {
+        "label": "sys",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "sys",
+        "description": "sys",
+        "detail": "sys",
+        "documentation": {}
+    },
+    {
+        "label": "rate_limit_exceeded_handler",
+        "kind": 2,
+        "importPath": "backend.app.middleware.rate_limit",
+        "description": "backend.app.middleware.rate_limit",
+        "peekOfCode": "def rate_limit_exceeded_handler(request: Request, exc: RateLimitExceeded):\n    return JSONResponse(\n        status_code=429,\n        content={\n            \"detail\": \"Juda ko'p so'rov! Biroz kuting.\",\n            \"retry_after\": \"60 sekund\"\n        }\n    )",
+        "detail": "backend.app.middleware.rate_limit",
+        "documentation": {}
+    },
+    {
+        "label": "limiter",
+        "kind": 5,
+        "importPath": "backend.app.middleware.rate_limit",
+        "description": "backend.app.middleware.rate_limit",
+        "peekOfCode": "limiter = Limiter(key_func=get_remote_address, default_limits=[\"200/minute\"])\ndef rate_limit_exceeded_handler(request: Request, exc: RateLimitExceeded):\n    return JSONResponse(\n        status_code=429,\n        content={\n            \"detail\": \"Juda ko'p so'rov! Biroz kuting.\",\n            \"retry_after\": \"60 sekund\"\n        }\n    )",
+        "detail": "backend.app.middleware.rate_limit",
+        "documentation": {}
+    },
+    {
+        "label": "OTPCode",
+        "kind": 6,
+        "importPath": "backend.app.models.otp",
+        "description": "backend.app.models.otp",
+        "peekOfCode": "class OTPCode(Base):\n    __tablename__ = \"otp_codes\"\n    id = Column(Integer, primary_key=True, index=True)\n    phone_or_email = Column(String, nullable=False)\n    code = Column(String, nullable=False)\n    is_used = Column(Boolean, default=False)\n    created_at = Column(DateTime(timezone=True), server_default=func.now())\n    expires_at = Column(DateTime(timezone=True), nullable=False)",
+        "detail": "backend.app.models.otp",
+        "documentation": {}
+    },
+    {
+        "label": "TransactionType",
+        "kind": 6,
+        "importPath": "backend.app.models.transaction",
+        "description": "backend.app.models.transaction",
+        "peekOfCode": "class TransactionType(str, enum.Enum):\n    INCOME = \"income\"\n    EXPENSE = \"expense\"\nclass Transaction(Base):\n    __tablename__ = \"transactions\"\n    id = Column(Integer, primary_key=True, index=True)\n    user_id = Column(String, ForeignKey(\"users.id\"), nullable=False, index=True)\n    amount = Column(Float, nullable=False)\n    type = Column(Enum(TransactionType), nullable=False)\n    category = Column(String, nullable=False)",
+        "detail": "backend.app.models.transaction",
+        "documentation": {}
+    },
+    {
+        "label": "Transaction",
+        "kind": 6,
+        "importPath": "backend.app.models.transaction",
+        "description": "backend.app.models.transaction",
+        "peekOfCode": "class Transaction(Base):\n    __tablename__ = \"transactions\"\n    id = Column(Integer, primary_key=True, index=True)\n    user_id = Column(String, ForeignKey(\"users.id\"), nullable=False, index=True)\n    amount = Column(Float, nullable=False)\n    type = Column(Enum(TransactionType), nullable=False)\n    category = Column(String, nullable=False)\n    description = Column(String, default=\"\")\n    date = Column(DateTime(timezone=True), server_default=func.now())\n    month = Column(Integer, nullable=False)",
+        "detail": "backend.app.models.transaction",
+        "documentation": {}
+    },
+    {
+        "label": "User",
+        "kind": 6,
+        "importPath": "backend.app.models.user",
+        "description": "backend.app.models.user",
+        "peekOfCode": "class User(Base):\n    __tablename__ = \"users\"\n    id = Column(String, primary_key=True, default=generate_user_id, index=True)\n    email = Column(String, unique=True, index=True, nullable=False)\n    username = Column(String, unique=True, index=True, nullable=False)\n    hashed_password = Column(String, nullable=False)\n    full_name = Column(String, default=\"\")\n    is_active = Column(Boolean, default=True)\n    is_admin = Column(Boolean, default=False)\n    is_verified = Column(Boolean, default=False)",
+        "detail": "backend.app.models.user",
+        "documentation": {}
+    },
+    {
+        "label": "generate_user_id",
+        "kind": 2,
+        "importPath": "backend.app.models.user",
+        "description": "backend.app.models.user",
+        "peekOfCode": "def generate_user_id():\n    return str(uuid.uuid4()).replace('-', '')[:14].upper()\nclass User(Base):\n    __tablename__ = \"users\"\n    id = Column(String, primary_key=True, default=generate_user_id, index=True)\n    email = Column(String, unique=True, index=True, nullable=False)\n    username = Column(String, unique=True, index=True, nullable=False)\n    hashed_password = Column(String, nullable=False)\n    full_name = Column(String, default=\"\")\n    is_active = Column(Boolean, default=True)",
+        "detail": "backend.app.models.user",
+        "documentation": {}
+    },
+    {
+        "label": "require_admin",
+        "kind": 2,
+        "importPath": "backend.app.routers.admin",
+        "description": "backend.app.routers.admin",
+        "peekOfCode": "def require_admin(current_user: User = Depends(get_current_user)):\n    if not current_user.is_admin:\n        raise HTTPException(status_code=403, detail=\"Admin huquqi yo'q!\")\n    return current_user\n# --- Umumiy statistika ---\n@router.get(\"/stats\")\ndef get_stats(\n    db: Session = Depends(get_db),\n    admin: User = Depends(require_admin)\n):",
+        "detail": "backend.app.routers.admin",
+        "documentation": {}
+    },
+    {
+        "label": "get_stats",
+        "kind": 2,
+        "importPath": "backend.app.routers.admin",
+        "description": "backend.app.routers.admin",
+        "peekOfCode": "def get_stats(\n    db: Session = Depends(get_db),\n    admin: User = Depends(require_admin)\n):\n    total_users = db.query(func.count(User.id)).scalar() or 0\n    active_users = db.query(func.count(User.id)).filter(User.is_active == True).scalar() or 0\n    total_transactions = db.query(func.count(Transaction.id)).scalar() or 0\n    total_income = db.query(func.sum(Transaction.amount)).filter(\n        Transaction.type == TransactionType.INCOME\n    ).scalar() or 0",
+        "detail": "backend.app.routers.admin",
+        "documentation": {}
+    },
+    {
+        "label": "get_all_users",
+        "kind": 2,
+        "importPath": "backend.app.routers.admin",
+        "description": "backend.app.routers.admin",
+        "peekOfCode": "def get_all_users(\n    skip: int = 0,\n    limit: int = 50,\n    db: Session = Depends(get_db),\n    admin: User = Depends(require_admin)\n):\n    limit = max(1, min(limit, 100))\n    skip = max(0, skip)\n    users = db.query(User).offset(skip).limit(limit).all()\n    counts = dict(",
+        "detail": "backend.app.routers.admin",
+        "documentation": {}
+    },
+    {
+        "label": "toggle_user_active",
+        "kind": 2,
+        "importPath": "backend.app.routers.admin",
+        "description": "backend.app.routers.admin",
+        "peekOfCode": "def toggle_user_active(\n    user_id: str, \n    db: Session = Depends(get_db),\n    admin: User = Depends(require_admin)\n):\n    user = db.query(User).filter(User.id == user_id).first()\n    if not user:\n        raise HTTPException(status_code=404, detail=\"User topilmadi!\")\n    if user.id == admin.id:\n        raise HTTPException(status_code=400, detail=\"O'zingizni bloklayolmaysiz!\")",
+        "detail": "backend.app.routers.admin",
+        "documentation": {}
+    },
+    {
+        "label": "toggle_admin",
+        "kind": 2,
+        "importPath": "backend.app.routers.admin",
+        "description": "backend.app.routers.admin",
+        "peekOfCode": "def toggle_admin(\n    user_id: str, \n    db: Session = Depends(get_db),\n    admin: User = Depends(require_admin)\n):\n    user = db.query(User).filter(User.id == user_id).first()\n    if not user:\n        raise HTTPException(status_code=404, detail=\"User topilmadi!\")\n    if user.id == admin.id:\n        raise HTTPException(status_code=400, detail=\"O'zingizni o'zgartiraysiz!\")",
+        "detail": "backend.app.routers.admin",
+        "documentation": {}
+    },
+    {
+        "label": "delete_user",
+        "kind": 2,
+        "importPath": "backend.app.routers.admin",
+        "description": "backend.app.routers.admin",
+        "peekOfCode": "def delete_user(\n    user_id: str, \n    db: Session = Depends(get_db),\n    admin: User = Depends(require_admin)\n):\n    user = db.query(User).filter(User.id == user_id).first()\n    if not user:\n        raise HTTPException(status_code=404, detail=\"User topilmadi!\")\n    if user.id == admin.id:\n        raise HTTPException(status_code=400, detail=\"O'zingizni o'chira olmaysiz!\")",
+        "detail": "backend.app.routers.admin",
+        "documentation": {}
+    },
+    {
+        "label": "get_all_transactions",
+        "kind": 2,
+        "importPath": "backend.app.routers.admin",
+        "description": "backend.app.routers.admin",
+        "peekOfCode": "def get_all_transactions(\n    skip: int = 0,\n    limit: int = 50,\n    db: Session = Depends(get_db),\n    admin: User = Depends(require_admin)\n):\n    limit = max(1, min(limit, 100))\n    skip = max(0, skip)\n    rows = (\n        db.query(Transaction, User.email)",
+        "detail": "backend.app.routers.admin",
+        "documentation": {}
+    },
+    {
+        "label": "router",
+        "kind": 5,
+        "importPath": "backend.app.routers.admin",
+        "description": "backend.app.routers.admin",
+        "peekOfCode": "router = APIRouter()\n# Admin tekshirish\ndef require_admin(current_user: User = Depends(get_current_user)):\n    if not current_user.is_admin:\n        raise HTTPException(status_code=403, detail=\"Admin huquqi yo'q!\")\n    return current_user\n# --- Umumiy statistika ---\n@router.get(\"/stats\")\ndef get_stats(\n    db: Session = Depends(get_db),",
+        "detail": "backend.app.routers.admin",
+        "documentation": {}
+    },
+    {
+        "label": "UserRegister",
+        "kind": 6,
+        "importPath": "backend.app.routers.auth",
+        "description": "backend.app.routers.auth",
+        "peekOfCode": "class UserRegister(BaseModel):\n    email: EmailStr\n    username: str\n    password: str\n    full_name: str = \"\"\nclass UserResponse(BaseModel):\n    id: str\n    email: str\n    username: str\n    full_name: str",
+        "detail": "backend.app.routers.auth",
+        "documentation": {}
+    },
+    {
+        "label": "UserResponse",
+        "kind": 6,
+        "importPath": "backend.app.routers.auth",
+        "description": "backend.app.routers.auth",
+        "peekOfCode": "class UserResponse(BaseModel):\n    id: str\n    email: str\n    username: str\n    full_name: str\n    is_admin: bool\n    avatar: Optional[str] = None\n    class Config:\n        from_attributes = True\nclass Token(BaseModel):",
+        "detail": "backend.app.routers.auth",
+        "documentation": {}
+    },
+    {
+        "label": "Token",
+        "kind": 6,
+        "importPath": "backend.app.routers.auth",
+        "description": "backend.app.routers.auth",
+        "peekOfCode": "class Token(BaseModel):\n    access_token: str\n    token_type: str\n    user: UserResponse\nclass GoogleToken(BaseModel):\n    token: str\nclass UpdateEmail(BaseModel):\n    new_email: EmailStr\nclass UpdatePassword(BaseModel):\n    old_password: str",
+        "detail": "backend.app.routers.auth",
+        "documentation": {}
+    },
+    {
+        "label": "GoogleToken",
+        "kind": 6,
+        "importPath": "backend.app.routers.auth",
+        "description": "backend.app.routers.auth",
+        "peekOfCode": "class GoogleToken(BaseModel):\n    token: str\nclass UpdateEmail(BaseModel):\n    new_email: EmailStr\nclass UpdatePassword(BaseModel):\n    old_password: str\n    new_password: str\n    confirm_password: str\nclass UpdateProfile(BaseModel):\n    full_name: Optional[str] = None",
+        "detail": "backend.app.routers.auth",
+        "documentation": {}
+    },
+    {
+        "label": "UpdateEmail",
+        "kind": 6,
+        "importPath": "backend.app.routers.auth",
+        "description": "backend.app.routers.auth",
+        "peekOfCode": "class UpdateEmail(BaseModel):\n    new_email: EmailStr\nclass UpdatePassword(BaseModel):\n    old_password: str\n    new_password: str\n    confirm_password: str\nclass UpdateProfile(BaseModel):\n    full_name: Optional[str] = None\n    username: Optional[str] = None\n# --- Current user ---",
+        "detail": "backend.app.routers.auth",
+        "documentation": {}
+    },
+    {
+        "label": "UpdatePassword",
+        "kind": 6,
+        "importPath": "backend.app.routers.auth",
+        "description": "backend.app.routers.auth",
+        "peekOfCode": "class UpdatePassword(BaseModel):\n    old_password: str\n    new_password: str\n    confirm_password: str\nclass UpdateProfile(BaseModel):\n    full_name: Optional[str] = None\n    username: Optional[str] = None\n# --- Current user ---\ndef get_current_user(\n    token: str = Depends(oauth2_scheme), db: Session = Depends(get_db)",
+        "detail": "backend.app.routers.auth",
+        "documentation": {}
+    },
+    {
+        "label": "UpdateProfile",
+        "kind": 6,
+        "importPath": "backend.app.routers.auth",
+        "description": "backend.app.routers.auth",
+        "peekOfCode": "class UpdateProfile(BaseModel):\n    full_name: Optional[str] = None\n    username: Optional[str] = None\n# --- Current user ---\ndef get_current_user(\n    token: str = Depends(oauth2_scheme), db: Session = Depends(get_db)\n):\n    from ..utils.security import verify_token\n    payload = verify_token(token)\n    if not payload:",
+        "detail": "backend.app.routers.auth",
+        "documentation": {}
+    },
+    {
+        "label": "get_current_user",
+        "kind": 2,
+        "importPath": "backend.app.routers.auth",
+        "description": "backend.app.routers.auth",
+        "peekOfCode": "def get_current_user(\n    token: str = Depends(oauth2_scheme), db: Session = Depends(get_db)\n):\n    from ..utils.security import verify_token\n    payload = verify_token(token)\n    if not payload:\n        raise HTTPException(status_code=401, detail=\"Token yaroqsiz\")\n    user = db.query(User).filter(User.email == payload.get(\"sub\")).first()\n    if not user:\n        raise HTTPException(status_code=401, detail=\"Foydalanuvchi topilmadi\")",
+        "detail": "backend.app.routers.auth",
+        "documentation": {}
+    },
+    {
+        "label": "register",
+        "kind": 2,
+        "importPath": "backend.app.routers.auth",
+        "description": "backend.app.routers.auth",
+        "peekOfCode": "def register(request: Request, data: UserRegister, db: Session = Depends(get_db)):\n    # Email format tekshirish\n    if not validate_email_format(data.email):\n        raise HTTPException(status_code=400, detail=\"Email formati noto'g'ri!\")\n    # Username tekshirish\n    is_valid, msg = validate_username(data.username)\n    if not is_valid:\n        raise HTTPException(status_code=400, detail=msg)\n    # Parol kuchliligi\n    is_strong, msg = validate_password_strength(data.password)",
+        "detail": "backend.app.routers.auth",
+        "documentation": {}
+    },
+    {
+        "label": "login",
+        "kind": 2,
+        "importPath": "backend.app.routers.auth",
+        "description": "backend.app.routers.auth",
+        "peekOfCode": "def login(\n    request: Request,\n    form_data: OAuth2PasswordRequestForm = Depends(),\n    db: Session = Depends(get_db),\n):\n    user = db.query(User).filter(User.email == form_data.username).first()\n    if not user or not verify_password(form_data.password, user.hashed_password):\n        raise HTTPException(status_code=400, detail=\"Email yoki parol xato!\")\n    token = create_access_token({\"sub\": user.email})\n    return {\"access_token\": token, \"token_type\": \"bearer\", \"user\": user}",
+        "detail": "backend.app.routers.auth",
+        "documentation": {}
+    },
+    {
+        "label": "get_me",
+        "kind": 2,
+        "importPath": "backend.app.routers.auth",
+        "description": "backend.app.routers.auth",
+        "peekOfCode": "def get_me(current_user: User = Depends(get_current_user)):\n    return current_user\n# --- Email yangilash ---\n@router.put(\"/update-email\")\ndef update_email(\n    data: UpdateEmail,\n    db: Session = Depends(get_db),\n    current_user: User = Depends(get_current_user),\n):\n    if db.query(User).filter(User.email == data.new_email).first():",
+        "detail": "backend.app.routers.auth",
+        "documentation": {}
+    },
+    {
+        "label": "update_email",
+        "kind": 2,
+        "importPath": "backend.app.routers.auth",
+        "description": "backend.app.routers.auth",
+        "peekOfCode": "def update_email(\n    data: UpdateEmail,\n    db: Session = Depends(get_db),\n    current_user: User = Depends(get_current_user),\n):\n    if db.query(User).filter(User.email == data.new_email).first():\n        raise HTTPException(status_code=400, detail=\"Bu email band!\")\n    current_user.email = data.new_email\n    db.commit()\n    token = create_access_token({\"sub\": current_user.email})",
+        "detail": "backend.app.routers.auth",
+        "documentation": {}
+    },
+    {
+        "label": "update_password",
+        "kind": 2,
+        "importPath": "backend.app.routers.auth",
+        "description": "backend.app.routers.auth",
+        "peekOfCode": "def update_password(\n    request: Request,\n    data: UpdatePassword,\n    db: Session = Depends(get_db),\n    current_user: User = Depends(get_current_user),\n):\n    if not verify_password(data.old_password, current_user.hashed_password):\n        raise HTTPException(status_code=400, detail=\"Eski parol xato!\")\n    if data.new_password != data.confirm_password:\n        raise HTTPException(status_code=400, detail=\"Parollar mos kelmadi!\")",
+        "detail": "backend.app.routers.auth",
+        "documentation": {}
+    },
+    {
+        "label": "update_profile",
+        "kind": 2,
+        "importPath": "backend.app.routers.auth",
+        "description": "backend.app.routers.auth",
+        "peekOfCode": "def update_profile(\n    data: UpdateProfile,\n    db: Session = Depends(get_db),\n    current_user: User = Depends(get_current_user),\n):\n    if data.full_name:\n        current_user.full_name = data.full_name\n    if data.username:\n        existing = db.query(User).filter(User.username == data.username).first()\n        if existing and existing.id != current_user.id:",
+        "detail": "backend.app.routers.auth",
+        "documentation": {}
+    },
+    {
+        "label": "upload_avatar",
+        "kind": 2,
+        "importPath": "backend.app.routers.auth",
+        "description": "backend.app.routers.auth",
+        "peekOfCode": "def upload_avatar(\n    file: UploadFile = File(...),\n    db: Session = Depends(get_db),\n    current_user: User = Depends(get_current_user),\n):\n    ext = ALLOWED_AVATAR_TYPES.get(file.content_type)\n    if not ext:\n        raise HTTPException(status_code=400, detail=\"Faqat JPG, PNG, WEBP yoki GIF rasm yuklash mumkin!\")\n    contents = file.file.read()\n    if len(contents) > MAX_AVATAR_SIZE:",
+        "detail": "backend.app.routers.auth",
+        "documentation": {}
+    },
+    {
+        "label": "router",
+        "kind": 5,
+        "importPath": "backend.app.routers.auth",
+        "description": "backend.app.routers.auth",
+        "peekOfCode": "router = APIRouter()\noauth2_scheme = OAuth2PasswordBearer(tokenUrl=\"/api/auth/login\")\n# Upload papka yaratish\nUPLOAD_DIR = \"uploads/avatars\"\nos.makedirs(UPLOAD_DIR, exist_ok=True)\nALLOWED_AVATAR_TYPES = {\n    \"image/jpeg\": \"jpg\",\n    \"image/png\": \"png\",\n    \"image/webp\": \"webp\",\n    \"image/gif\": \"gif\",",
+        "detail": "backend.app.routers.auth",
+        "documentation": {}
+    },
+    {
+        "label": "oauth2_scheme",
+        "kind": 5,
+        "importPath": "backend.app.routers.auth",
+        "description": "backend.app.routers.auth",
+        "peekOfCode": "oauth2_scheme = OAuth2PasswordBearer(tokenUrl=\"/api/auth/login\")\n# Upload papka yaratish\nUPLOAD_DIR = \"uploads/avatars\"\nos.makedirs(UPLOAD_DIR, exist_ok=True)\nALLOWED_AVATAR_TYPES = {\n    \"image/jpeg\": \"jpg\",\n    \"image/png\": \"png\",\n    \"image/webp\": \"webp\",\n    \"image/gif\": \"gif\",\n}",
+        "detail": "backend.app.routers.auth",
+        "documentation": {}
+    },
+    {
+        "label": "UPLOAD_DIR",
+        "kind": 5,
+        "importPath": "backend.app.routers.auth",
+        "description": "backend.app.routers.auth",
+        "peekOfCode": "UPLOAD_DIR = \"uploads/avatars\"\nos.makedirs(UPLOAD_DIR, exist_ok=True)\nALLOWED_AVATAR_TYPES = {\n    \"image/jpeg\": \"jpg\",\n    \"image/png\": \"png\",\n    \"image/webp\": \"webp\",\n    \"image/gif\": \"gif\",\n}\nMAX_AVATAR_SIZE = 5 * 1024 * 1024  # 5 MB\n# --- Schemalar ---",
+        "detail": "backend.app.routers.auth",
+        "documentation": {}
+    },
+    {
+        "label": "ALLOWED_AVATAR_TYPES",
+        "kind": 5,
+        "importPath": "backend.app.routers.auth",
+        "description": "backend.app.routers.auth",
+        "peekOfCode": "ALLOWED_AVATAR_TYPES = {\n    \"image/jpeg\": \"jpg\",\n    \"image/png\": \"png\",\n    \"image/webp\": \"webp\",\n    \"image/gif\": \"gif\",\n}\nMAX_AVATAR_SIZE = 5 * 1024 * 1024  # 5 MB\n# --- Schemalar ---\nclass UserRegister(BaseModel):\n    email: EmailStr",
+        "detail": "backend.app.routers.auth",
+        "documentation": {}
+    },
+    {
+        "label": "MAX_AVATAR_SIZE",
+        "kind": 5,
+        "importPath": "backend.app.routers.auth",
+        "description": "backend.app.routers.auth",
+        "peekOfCode": "MAX_AVATAR_SIZE = 5 * 1024 * 1024  # 5 MB\n# --- Schemalar ---\nclass UserRegister(BaseModel):\n    email: EmailStr\n    username: str\n    password: str\n    full_name: str = \"\"\nclass UserResponse(BaseModel):\n    id: str\n    email: str",
+        "detail": "backend.app.routers.auth",
+        "documentation": {}
+    },
+    {
+        "label": "send_monthly_report",
+        "kind": 2,
+        "importPath": "backend.app.routers.dashboard",
+        "description": "backend.app.routers.dashboard",
+        "peekOfCode": "def send_monthly_report(\n    db: Session = Depends(get_db), current_user: User = Depends(get_current_user)\n):\n    now = datetime.utcnow()\n    month_names = {\n        1: \"Yanvar\",\n        2: \"Fevral\",\n        3: \"Mart\",\n        4: \"Aprel\",\n        5: \"May\",",
+        "detail": "backend.app.routers.dashboard",
+        "documentation": {}
+    },
+    {
+        "label": "get_summary",
+        "kind": 2,
+        "importPath": "backend.app.routers.dashboard",
+        "description": "backend.app.routers.dashboard",
+        "peekOfCode": "def get_summary(\n    db: Session = Depends(get_db), current_user: User = Depends(get_current_user)\n):\n    now = datetime.utcnow()\n    # Bu oylik\n    monthly_income = (\n        db.query(func.sum(Transaction.amount))\n        .filter(\n            Transaction.user_id == current_user.id,\n            Transaction.type == TransactionType.INCOME,",
+        "detail": "backend.app.routers.dashboard",
+        "documentation": {}
+    },
+    {
+        "label": "get_monthly_summary",
+        "kind": 2,
+        "importPath": "backend.app.routers.dashboard",
+        "description": "backend.app.routers.dashboard",
+        "peekOfCode": "def get_monthly_summary(\n    year: int = None,\n    db: Session = Depends(get_db),\n    current_user: User = Depends(get_current_user),\n):\n    now = datetime.utcnow()\n    if not year:\n        year = now.year\n    if year < 2000 or year > 2100:\n        raise HTTPException(status_code=400, detail=\"Yil noto'g'ri!\")",
+        "detail": "backend.app.routers.dashboard",
+        "documentation": {}
+    },
+    {
+        "label": "get_yearly_summary",
+        "kind": 2,
+        "importPath": "backend.app.routers.dashboard",
+        "description": "backend.app.routers.dashboard",
+        "peekOfCode": "def get_yearly_summary(\n    db: Session = Depends(get_db), current_user: User = Depends(get_current_user)\n):\n    years_query = (\n        db.query(Transaction.year)\n        .filter(Transaction.user_id == current_user.id)\n        .distinct()\n        .all()\n    )\n    result = []",
+        "detail": "backend.app.routers.dashboard",
+        "documentation": {}
+    },
+    {
+        "label": "get_by_category",
+        "kind": 2,
+        "importPath": "backend.app.routers.dashboard",
+        "description": "backend.app.routers.dashboard",
+        "peekOfCode": "def get_by_category(\n    month: int = None,\n    year: int = None,\n    db: Session = Depends(get_db),\n    current_user: User = Depends(get_current_user),\n):\n    if month is not None and not (1 <= month <= 12):\n        raise HTTPException(status_code=400, detail=\"Oy 1 dan 12 gacha bo'lishi kerak!\")\n    if year is not None and (year < 2000 or year > 2100):\n        raise HTTPException(status_code=400, detail=\"Yil noto'g'ri!\")",
+        "detail": "backend.app.routers.dashboard",
+        "documentation": {}
+    },
+    {
+        "label": "get_recent",
+        "kind": 2,
+        "importPath": "backend.app.routers.dashboard",
+        "description": "backend.app.routers.dashboard",
+        "peekOfCode": "def get_recent(\n    limit: int = 10,\n    db: Session = Depends(get_db),\n    current_user: User = Depends(get_current_user),\n):\n    transactions = (\n        db.query(Transaction)\n        .filter(Transaction.user_id == current_user.id)\n        .order_by(Transaction.date.desc())\n        .limit(limit)",
+        "detail": "backend.app.routers.dashboard",
+        "documentation": {}
+    },
+    {
+        "label": "get_today",
+        "kind": 2,
+        "importPath": "backend.app.routers.dashboard",
+        "description": "backend.app.routers.dashboard",
+        "peekOfCode": "def get_today(\n    db: Session = Depends(get_db), current_user: User = Depends(get_current_user)\n):\n    now = datetime.utcnow()\n    today_income = (\n        db.query(func.sum(Transaction.amount))\n        .filter(\n            Transaction.user_id == current_user.id,\n            Transaction.type == TransactionType.INCOME,\n            func.date(Transaction.date) == now.date(),",
+        "detail": "backend.app.routers.dashboard",
+        "documentation": {}
+    },
+    {
+        "label": "router",
+        "kind": 5,
+        "importPath": "backend.app.routers.dashboard",
+        "description": "backend.app.routers.dashboard",
+        "peekOfCode": "router = APIRouter()\n@router.post(\"/send-monthly-report\")\ndef send_monthly_report(\n    db: Session = Depends(get_db), current_user: User = Depends(get_current_user)\n):\n    now = datetime.utcnow()\n    month_names = {\n        1: \"Yanvar\",\n        2: \"Fevral\",\n        3: \"Mart\",",
+        "detail": "backend.app.routers.dashboard",
+        "documentation": {}
+    },
+    {
+        "label": "SendOTPRequest",
+        "kind": 6,
+        "importPath": "backend.app.routers.otp",
+        "description": "backend.app.routers.otp",
+        "peekOfCode": "class SendOTPRequest(BaseModel):\n    email: str\nclass VerifyOTPRequest(BaseModel):\n    email: str\n    code: str\nclass ResetPasswordRequest(BaseModel):\n    email: str\n    code: str\n    new_password: str\n    confirm_password: str",
+        "detail": "backend.app.routers.otp",
+        "documentation": {}
+    },
+    {
+        "label": "VerifyOTPRequest",
+        "kind": 6,
+        "importPath": "backend.app.routers.otp",
+        "description": "backend.app.routers.otp",
+        "peekOfCode": "class VerifyOTPRequest(BaseModel):\n    email: str\n    code: str\nclass ResetPasswordRequest(BaseModel):\n    email: str\n    code: str\n    new_password: str\n    confirm_password: str\n# --- OTP yuborish ---\n@router.post(\"/send-otp\")",
+        "detail": "backend.app.routers.otp",
+        "documentation": {}
+    },
+    {
+        "label": "ResetPasswordRequest",
+        "kind": 6,
+        "importPath": "backend.app.routers.otp",
+        "description": "backend.app.routers.otp",
+        "peekOfCode": "class ResetPasswordRequest(BaseModel):\n    email: str\n    code: str\n    new_password: str\n    confirm_password: str\n# --- OTP yuborish ---\n@router.post(\"/send-otp\")\ndef send_otp(data: SendOTPRequest, db: Session = Depends(get_db)):\n    # User borligini tekshirish\n    user = db.query(User).filter(User.email == data.email).first()",
+        "detail": "backend.app.routers.otp",
+        "documentation": {}
+    },
+    {
+        "label": "send_otp",
+        "kind": 2,
+        "importPath": "backend.app.routers.otp",
+        "description": "backend.app.routers.otp",
+        "peekOfCode": "def send_otp(data: SendOTPRequest, db: Session = Depends(get_db)):\n    # User borligini tekshirish\n    user = db.query(User).filter(User.email == data.email).first()\n    if not user:\n        raise HTTPException(status_code=404, detail=\"Bu email bilan foydalanuvchi topilmadi!\")\n    # Eski OTPlarni o'chirish\n    db.query(OTPCode).filter(\n        OTPCode.phone_or_email == data.email,\n        OTPCode.is_used == False\n    ).delete()",
+        "detail": "backend.app.routers.otp",
+        "documentation": {}
+    },
+    {
+        "label": "verify_otp",
+        "kind": 2,
+        "importPath": "backend.app.routers.otp",
+        "description": "backend.app.routers.otp",
+        "peekOfCode": "def verify_otp(data: VerifyOTPRequest, db: Session = Depends(get_db)):\n    otp = db.query(OTPCode).filter(\n        OTPCode.phone_or_email == data.email,\n        OTPCode.code == data.code,\n        OTPCode.is_used == False\n    ).first()\n    if not otp:\n        raise HTTPException(status_code=400, detail=\"Kod noto'g'ri!\")\n    if datetime.utcnow() > otp.expires_at:\n        raise HTTPException(status_code=400, detail=\"Kod muddati o'tgan! Qayta yuboring.\")",
+        "detail": "backend.app.routers.otp",
+        "documentation": {}
+    },
+    {
+        "label": "reset_password",
+        "kind": 2,
+        "importPath": "backend.app.routers.otp",
+        "description": "backend.app.routers.otp",
+        "peekOfCode": "def reset_password(data: ResetPasswordRequest, db: Session = Depends(get_db)):\n    # OTP tekshirish\n    otp = db.query(OTPCode).filter(\n        OTPCode.phone_or_email == data.email,\n        OTPCode.code == data.code,\n        OTPCode.is_used == False\n    ).first()\n    if not otp:\n        raise HTTPException(status_code=400, detail=\"Kod noto'g'ri!\")\n    if datetime.utcnow() > otp.expires_at:",
+        "detail": "backend.app.routers.otp",
+        "documentation": {}
+    },
+    {
+        "label": "router",
+        "kind": 5,
+        "importPath": "backend.app.routers.otp",
+        "description": "backend.app.routers.otp",
+        "peekOfCode": "router = APIRouter()\n# --- Schemalar ---\nclass SendOTPRequest(BaseModel):\n    email: str\nclass VerifyOTPRequest(BaseModel):\n    email: str\n    code: str\nclass ResetPasswordRequest(BaseModel):\n    email: str\n    code: str",
+        "detail": "backend.app.routers.otp",
+        "documentation": {}
+    },
+    {
+        "label": "fmt",
+        "kind": 2,
+        "importPath": "backend.app.routers.telegram_bot",
+        "description": "backend.app.routers.telegram_bot",
+        "peekOfCode": "def fmt(amount: float) -> str:\n    return f\"{amount:,.0f} so'm\"\ndef get_daily_report(user: User, db: Session) -> str:\n    today = date.today()\n    income = (\n        db.query(func.sum(Transaction.amount))\n        .filter(\n            Transaction.user_id == user.id,\n            Transaction.type == TransactionType.INCOME,\n            func.date(Transaction.date) == today,",
+        "detail": "backend.app.routers.telegram_bot",
+        "documentation": {}
+    },
+    {
+        "label": "get_daily_report",
+        "kind": 2,
+        "importPath": "backend.app.routers.telegram_bot",
+        "description": "backend.app.routers.telegram_bot",
+        "peekOfCode": "def get_daily_report(user: User, db: Session) -> str:\n    today = date.today()\n    income = (\n        db.query(func.sum(Transaction.amount))\n        .filter(\n            Transaction.user_id == user.id,\n            Transaction.type == TransactionType.INCOME,\n            func.date(Transaction.date) == today,\n        )\n        .scalar()",
+        "detail": "backend.app.routers.telegram_bot",
+        "documentation": {}
+    },
+    {
+        "label": "send_daily_reports_to_all",
+        "kind": 2,
+        "importPath": "backend.app.routers.telegram_bot",
+        "description": "backend.app.routers.telegram_bot",
+        "peekOfCode": "def send_daily_reports_to_all(db_session):\n    \"\"\"Barcha ulangan userlarga kunlik hisobot\"\"\"\n    users = (\n        db_session.query(User)\n        .filter(User.telegram_chat_id != None, User.is_active == True)\n        .all()\n    )\n    sent = 0\n    for user in users:\n        try:",
+        "detail": "backend.app.routers.telegram_bot",
+        "documentation": {}
+    },
+    {
+        "label": "router",
+        "kind": 5,
+        "importPath": "backend.app.routers.telegram_bot",
+        "description": "backend.app.routers.telegram_bot",
+        "peekOfCode": "router = APIRouter()\ndef fmt(amount: float) -> str:\n    return f\"{amount:,.0f} so'm\"\ndef get_daily_report(user: User, db: Session) -> str:\n    today = date.today()\n    income = (\n        db.query(func.sum(Transaction.amount))\n        .filter(\n            Transaction.user_id == user.id,\n            Transaction.type == TransactionType.INCOME,",
+        "detail": "backend.app.routers.telegram_bot",
+        "documentation": {}
+    },
+    {
+        "label": "TransactionCreate",
+        "kind": 6,
+        "importPath": "backend.app.routers.transactions",
+        "description": "backend.app.routers.transactions",
+        "peekOfCode": "class TransactionCreate(BaseModel):\n    amount: float\n    type: TransactionType\n    category: str\n    description: Optional[str] = \"\"\n    month: Optional[int] = None\n    year: Optional[int] = None\nclass TransactionResponse(BaseModel):\n    id: int\n    amount: float",
+        "detail": "backend.app.routers.transactions",
+        "documentation": {}
+    },
+    {
+        "label": "TransactionResponse",
+        "kind": 6,
+        "importPath": "backend.app.routers.transactions",
+        "description": "backend.app.routers.transactions",
+        "peekOfCode": "class TransactionResponse(BaseModel):\n    id: int\n    amount: float\n    type: TransactionType\n    category: str\n    description: Optional[str]\n    date: datetime\n    month: int\n    year: int\n    user_id: str",
+        "detail": "backend.app.routers.transactions",
+        "documentation": {}
+    },
+    {
+        "label": "create_transaction",
+        "kind": 2,
+        "importPath": "backend.app.routers.transactions",
+        "description": "backend.app.routers.transactions",
+        "peekOfCode": "def create_transaction(\n    data: TransactionCreate,\n    db: Session = Depends(get_db),\n    current_user: User = Depends(get_current_user),\n):\n    if data.amount <= 0:\n        raise HTTPException(status_code=400, detail=\"Summa 0 dan katta bo'lishi kerak!\")\n    if data.amount > 1_000_000_000:\n        raise HTTPException(status_code=400, detail=\"Summa juda katta!\")\n    # Input tozalash",
+        "detail": "backend.app.routers.transactions",
+        "documentation": {}
+    },
+    {
+        "label": "get_transactions",
+        "kind": 2,
+        "importPath": "backend.app.routers.transactions",
+        "description": "backend.app.routers.transactions",
+        "peekOfCode": "def get_transactions(\n    skip: int = 0,\n    limit: int = 50,\n    type: Optional[TransactionType] = None,\n    category: Optional[str] = None,\n    month: Optional[int] = None,\n    year: Optional[int] = None,\n    db: Session = Depends(get_db),\n    current_user: User = Depends(get_current_user),\n):",
+        "detail": "backend.app.routers.transactions",
+        "documentation": {}
+    },
+    {
+        "label": "get_transaction",
+        "kind": 2,
+        "importPath": "backend.app.routers.transactions",
+        "description": "backend.app.routers.transactions",
+        "peekOfCode": "def get_transaction(\n    transaction_id: int,\n    db: Session = Depends(get_db),\n    current_user: User = Depends(get_current_user),\n):\n    transaction = (\n        db.query(Transaction)\n        .filter(\n            Transaction.id == transaction_id, Transaction.user_id == current_user.id\n        )",
+        "detail": "backend.app.routers.transactions",
+        "documentation": {}
+    },
+    {
+        "label": "delete_transaction",
+        "kind": 2,
+        "importPath": "backend.app.routers.transactions",
+        "description": "backend.app.routers.transactions",
+        "peekOfCode": "def delete_transaction(\n    transaction_id: int,\n    db: Session = Depends(get_db),\n    current_user: User = Depends(get_current_user),\n):\n    transaction = (\n        db.query(Transaction)\n        .filter(\n            Transaction.id == transaction_id, Transaction.user_id == current_user.id\n        )",
+        "detail": "backend.app.routers.transactions",
+        "documentation": {}
+    },
+    {
+        "label": "get_categories",
+        "kind": 2,
+        "importPath": "backend.app.routers.transactions",
+        "description": "backend.app.routers.transactions",
+        "peekOfCode": "def get_categories(current_user: User = Depends(get_current_user)):\n    return {\n        \"income\": [\"Maosh\", \"Freelance\", \"Biznes\", \"Investitsiya\", \"Sovg'a\", \"Boshqa\"],\n        \"expense\": [\n            \"Oziq-ovqat\",\n            \"Transport\",\n            \"Uy-joy\",\n            \"Kiyim\",\n            \"Sog'liq\",\n            \"Ta'lim\",",
+        "detail": "backend.app.routers.transactions",
+        "documentation": {}
+    },
+    {
+        "label": "router",
+        "kind": 5,
+        "importPath": "backend.app.routers.transactions",
+        "description": "backend.app.routers.transactions",
+        "peekOfCode": "router = APIRouter()\nclass TransactionCreate(BaseModel):\n    amount: float\n    type: TransactionType\n    category: str\n    description: Optional[str] = \"\"\n    month: Optional[int] = None\n    year: Optional[int] = None\nclass TransactionResponse(BaseModel):\n    id: int",
+        "detail": "backend.app.routers.transactions",
+        "documentation": {}
+    },
+    {
+        "label": "send_email",
+        "kind": 2,
+        "importPath": "backend.app.services.email_service",
+        "description": "backend.app.services.email_service",
+        "peekOfCode": "def send_email(to_email: str, subject: str, html_content: str):\n    \"\"\"Email yuborish\"\"\"\n    try:\n        msg = MIMEMultipart(\"alternative\")\n        msg[\"Subject\"] = subject\n        msg[\"From\"] = settings.MAIL_FROM\n        msg[\"To\"] = to_email\n        html_part = MIMEText(html_content, \"html\")\n        msg.attach(html_part)\n        with smtplib.SMTP(settings.MAIL_SERVER, settings.MAIL_PORT) as server:",
+        "detail": "backend.app.services.email_service",
+        "documentation": {}
+    },
+    {
+        "label": "send_welcome_email",
+        "kind": 2,
+        "importPath": "backend.app.services.email_service",
+        "description": "backend.app.services.email_service",
+        "peekOfCode": "def send_welcome_email(to_email: str, full_name: str):\n    \"\"\"Ro'yxatdan o'tganda xush kelibsiz email\"\"\"\n    subject = \"💰 Finance App ga xush kelibsiz!\"\n    html = f\"\"\"\n    <!DOCTYPE html>\n    <html>\n    <body style=\"font-family: Arial, sans-serif; background: #14213D; padding: 20px;\">\n        <div style=\"max-width: 600px; margin: 0 auto; background: #1a2a4a; border-radius: 16px; padding: 40px; border: 1px solid #FCA311;\">\n            <h1 style=\"color: #FCA311; text-align: center;\">💰 Finance App</h1>\n            <h2 style=\"color: #E5E5E5;\">Assalomu alaykum, {full_name}! 👋</h2>",
+        "detail": "backend.app.services.email_service",
+        "documentation": {}
+    },
+    {
+        "label": "send_monthly_report_email",
+        "kind": 2,
+        "importPath": "backend.app.services.email_service",
+        "description": "backend.app.services.email_service",
+        "peekOfCode": "def send_monthly_report_email(\n    to_email: str,\n    full_name: str,\n    month_name: str,\n    income: float,\n    expense: float,\n    savings: float,\n):\n    \"\"\"Oylik hisobot email\"\"\"\n    subject = f\"📊 {month_name} oylik moliyaviy hisobotingiz\"",
+        "detail": "backend.app.services.email_service",
+        "documentation": {}
+    },
+    {
+        "label": "send_big_expense_alert",
+        "kind": 2,
+        "importPath": "backend.app.services.email_service",
+        "description": "backend.app.services.email_service",
+        "peekOfCode": "def send_big_expense_alert(\n    to_email: str, full_name: str, amount: float, category: str, balance: float\n):\n    \"\"\"Katta chiqim ogohlantirishk\"\"\"\n    subject = f\"⚠️ Katta chiqim: {amount:,.0f} so'm\"\n    html = f\"\"\"\n    <!DOCTYPE html>\n    <html>\n    <body style=\"font-family: Arial, sans-serif; background: #14213D; padding: 20px;\">\n        <div style=\"max-width: 600px; margin: 0 auto; background: #1a2a4a; border-radius: 16px; padding: 40px; border: 2px solid #eb3349;\">",
+        "detail": "backend.app.services.email_service",
+        "documentation": {}
+    },
+    {
+        "label": "export_monthly_pdf",
+        "kind": 2,
+        "importPath": "backend.app.services.pdf_service",
+        "description": "backend.app.services.pdf_service",
+        "peekOfCode": "def export_monthly_pdf(\n    month: int = None,\n    year: int = None,\n    db: Session = Depends(get_db),\n    current_user: User = Depends(get_current_user)\n):\n    now = datetime.utcnow()\n    if not month: month = now.month\n    if not year: year = now.year\n    month_names = {",
+        "detail": "backend.app.services.pdf_service",
+        "documentation": {}
+    },
+    {
+        "label": "export_all_pdf",
+        "kind": 2,
+        "importPath": "backend.app.services.pdf_service",
+        "description": "backend.app.services.pdf_service",
+        "peekOfCode": "def export_all_pdf(\n    db: Session = Depends(get_db),\n    current_user: User = Depends(get_current_user)\n):\n    transactions = db.query(Transaction).filter(\n        Transaction.user_id == current_user.id\n    ).order_by(Transaction.date.desc()).all()\n    total_income = db.query(func.sum(Transaction.amount)).filter(\n        Transaction.user_id == current_user.id,\n        Transaction.type == TransactionType.INCOME",
+        "detail": "backend.app.services.pdf_service",
+        "documentation": {}
+    },
+    {
+        "label": "send_telegram_message",
+        "kind": 2,
+        "importPath": "backend.app.services.telegram_service",
+        "description": "backend.app.services.telegram_service",
+        "peekOfCode": "def send_telegram_message(chat_id: str, message: str) -> bool:\n    \"\"\"Telegram ga xabar yuborish\"\"\"\n    if not settings.TELEGRAM_BOT_TOKEN or not chat_id:\n        return False\n    try:\n        url = f\"https://api.telegram.org/bot{settings.TELEGRAM_BOT_TOKEN}/sendMessage\"\n        response = req.post(\n            url,\n            json={\"chat_id\": chat_id, \"text\": message, \"parse_mode\": \"HTML\"},\n            timeout=10,",
+        "detail": "backend.app.services.telegram_service",
+        "documentation": {}
+    },
+    {
+        "label": "verify_password",
+        "kind": 2,
+        "importPath": "backend.app.utils.security",
+        "description": "backend.app.utils.security",
+        "peekOfCode": "def verify_password(plain_password: str, hashed_password: str) -> bool:\n    return bcrypt.checkpw(\n        plain_password.encode(\"utf-8\"), hashed_password.encode(\"utf-8\")\n    )\ndef get_password_hash(password: str) -> str:\n    salt = bcrypt.gensalt()\n    hashed = bcrypt.hashpw(password.encode(\"utf-8\"), salt)\n    return hashed.decode(\"utf-8\")\n# --- JWT Token ---\ndef create_access_token(data: dict, expires_delta: Optional[timedelta] = None):",
+        "detail": "backend.app.utils.security",
+        "documentation": {}
+    },
+    {
+        "label": "get_password_hash",
+        "kind": 2,
+        "importPath": "backend.app.utils.security",
+        "description": "backend.app.utils.security",
+        "peekOfCode": "def get_password_hash(password: str) -> str:\n    salt = bcrypt.gensalt()\n    hashed = bcrypt.hashpw(password.encode(\"utf-8\"), salt)\n    return hashed.decode(\"utf-8\")\n# --- JWT Token ---\ndef create_access_token(data: dict, expires_delta: Optional[timedelta] = None):\n    to_encode = data.copy()\n    expire = datetime.utcnow() + (\n        expires_delta or timedelta(minutes=settings.ACCESS_TOKEN_EXPIRE_MINUTES)\n    )",
+        "detail": "backend.app.utils.security",
+        "documentation": {}
+    },
+    {
+        "label": "create_access_token",
+        "kind": 2,
+        "importPath": "backend.app.utils.security",
+        "description": "backend.app.utils.security",
+        "peekOfCode": "def create_access_token(data: dict, expires_delta: Optional[timedelta] = None):\n    to_encode = data.copy()\n    expire = datetime.utcnow() + (\n        expires_delta or timedelta(minutes=settings.ACCESS_TOKEN_EXPIRE_MINUTES)\n    )\n    to_encode.update({\"exp\": expire})\n    return jwt.encode(to_encode, settings.SECRET_KEY, algorithm=settings.ALGORITHM)\ndef verify_token(token: str):\n    try:\n        payload = jwt.decode(",
+        "detail": "backend.app.utils.security",
+        "documentation": {}
+    },
+    {
+        "label": "verify_token",
+        "kind": 2,
+        "importPath": "backend.app.utils.security",
+        "description": "backend.app.utils.security",
+        "peekOfCode": "def verify_token(token: str):\n    try:\n        payload = jwt.decode(\n            token, settings.SECRET_KEY, algorithms=[settings.ALGORITHM]\n        )\n        return payload\n    except JWTError:\n        return None\n# --- Input Validation ---\ndef sanitize_string(text: str, max_length: int = 255) -> str:",
+        "detail": "backend.app.utils.security",
+        "documentation": {}
+    },
+    {
+        "label": "sanitize_string",
+        "kind": 2,
+        "importPath": "backend.app.utils.security",
+        "description": "backend.app.utils.security",
+        "peekOfCode": "def sanitize_string(text: str, max_length: int = 255) -> str:\n    \"\"\"XSS himoya (SQL injection SQLAlchemy parametrlangan so'rovlar bilan oldini oladi)\"\"\"\n    if not text:\n        return \"\"\n    # HTML taglarini tozalash\n    cleaned = bleach.clean(text, tags=[], strip=True)\n    # Uzunlikni cheklash\n    return cleaned[:max_length].strip()\ndef validate_password_strength(password: str) -> tuple[bool, str]:\n    \"\"\"Parol kuchliligi tekshirish\"\"\"",
+        "detail": "backend.app.utils.security",
+        "documentation": {}
+    },
+    {
+        "label": "validate_password_strength",
+        "kind": 2,
+        "importPath": "backend.app.utils.security",
+        "description": "backend.app.utils.security",
+        "peekOfCode": "def validate_password_strength(password: str) -> tuple[bool, str]:\n    \"\"\"Parol kuchliligi tekshirish\"\"\"\n    if len(password) < 8:\n        return False, \"Parol kamida 8 ta belgi bo'lishi kerak!\"\n    if not re.search(r\"[A-Z]\", password):\n        return False, \"Parolda kamida 1 ta katta harf bo'lishi kerak!\"\n    if not re.search(r\"[a-z]\", password):\n        return False, \"Parolda kamida 1 ta kichik harf bo'lishi kerak!\"\n    if not re.search(r\"\\d\", password):\n        return False, \"Parolda kamida 1 ta raqam bo'lishi kerak!\"",
+        "detail": "backend.app.utils.security",
+        "documentation": {}
+    },
+    {
+        "label": "validate_email_format",
+        "kind": 2,
+        "importPath": "backend.app.utils.security",
+        "description": "backend.app.utils.security",
+        "peekOfCode": "def validate_email_format(email: str) -> bool:\n    \"\"\"Email format tekshirish\"\"\"\n    pattern = r\"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$\"\n    return bool(re.match(pattern, email))\ndef validate_username(username: str) -> tuple[bool, str]:\n    \"\"\"Username tekshirish\"\"\"\n    if len(username) < 3:\n        return False, \"Username kamida 3 ta belgi!\"\n    if len(username) > 30:\n        return False, \"Username ko'pi bilan 30 ta belgi!\"",
+        "detail": "backend.app.utils.security",
+        "documentation": {}
+    },
+    {
+        "label": "validate_username",
+        "kind": 2,
+        "importPath": "backend.app.utils.security",
+        "description": "backend.app.utils.security",
+        "peekOfCode": "def validate_username(username: str) -> tuple[bool, str]:\n    \"\"\"Username tekshirish\"\"\"\n    if len(username) < 3:\n        return False, \"Username kamida 3 ta belgi!\"\n    if len(username) > 30:\n        return False, \"Username ko'pi bilan 30 ta belgi!\"\n    if not re.match(r\"^[a-zA-Z0-9_]+$\", username):\n        return False, \"Username faqat harf, raqam va _ bo'lishi mumkin!\"\n    return True, \"OK\"",
+        "detail": "backend.app.utils.security",
+        "documentation": {}
+    },
+    {
+        "label": "Settings",
+        "kind": 6,
+        "importPath": "backend.app.config",
+        "description": "backend.app.config",
+        "peekOfCode": "class Settings(BaseSettings):\n    DATABASE_URL: str = \"sqlite:///./finance.db\"\n    SECRET_KEY: str = \"your-secret-key\"\n    ALGORITHM: str = \"HS256\"\n    ACCESS_TOKEN_EXPIRE_MINUTES: int = 60\n    ADMIN_EMAIL: str = \"admin@gmail.com\"\n    ADMIN_PASSWORD: str = \"admin123\"\n    GOOGLE_CLIENT_ID: str = \"\"\n    GOOGLE_CLIENT_SECRET: str = \"\"\n    GOOGLE_REDIRECT_URI: str = \"http://localhost:3000\"",
+        "detail": "backend.app.config",
+        "documentation": {}
+    },
+    {
+        "label": "settings",
+        "kind": 5,
+        "importPath": "backend.app.config",
+        "description": "backend.app.config",
+        "peekOfCode": "settings = Settings()",
+        "detail": "backend.app.config",
+        "documentation": {}
+    },
+    {
+        "label": "get_db",
+        "kind": 2,
+        "importPath": "backend.app.database",
+        "description": "backend.app.database",
+        "peekOfCode": "def get_db():\n    db = SessionLocal()\n    try:\n        yield db\n    finally:\n        db.close()",
+        "detail": "backend.app.database",
+        "documentation": {}
+    },
+    {
+        "label": "engine",
+        "kind": 5,
+        "importPath": "backend.app.database",
+        "description": "backend.app.database",
+        "peekOfCode": "engine = create_engine(\n    settings.DATABASE_URL,\n    connect_args={\"check_same_thread\": False}\n)\nSessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)\nBase = declarative_base()\ndef get_db():\n    db = SessionLocal()\n    try:\n        yield db",
+        "detail": "backend.app.database",
+        "documentation": {}
+    },
+    {
+        "label": "SessionLocal",
+        "kind": 5,
+        "importPath": "backend.app.database",
+        "description": "backend.app.database",
+        "peekOfCode": "SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)\nBase = declarative_base()\ndef get_db():\n    db = SessionLocal()\n    try:\n        yield db\n    finally:\n        db.close()",
+        "detail": "backend.app.database",
+        "documentation": {}
+    },
+    {
+        "label": "Base",
+        "kind": 5,
+        "importPath": "backend.app.database",
+        "description": "backend.app.database",
+        "peekOfCode": "Base = declarative_base()\ndef get_db():\n    db = SessionLocal()\n    try:\n        yield db\n    finally:\n        db.close()",
+        "detail": "backend.app.database",
+        "documentation": {}
+    },
+    {
+        "label": "daily_report_job",
+        "kind": 2,
+        "importPath": "backend.app.main",
+        "description": "backend.app.main",
+        "peekOfCode": "def daily_report_job():\n    db = SessionLocal()\n    try:\n        send_daily_reports_to_all(db)\n    finally:\n        db.close()\nscheduler.add_job(\n    daily_report_job,\n    CronTrigger(hour=21, minute=0),\n    id=\"daily_report\",",
+        "detail": "backend.app.main",
+        "documentation": {}
+    },
+    {
+        "label": "root",
+        "kind": 2,
+        "importPath": "backend.app.main",
+        "description": "backend.app.main",
+        "peekOfCode": "def root():\n    return {\"message\": \"Finance App API ishlamoqda! 🚀\"}\n@app.get(\"/health\")\ndef health_check():\n    return {\"status\": \"OK\"}",
+        "detail": "backend.app.main",
+        "documentation": {}
+    },
+    {
+        "label": "health_check",
+        "kind": 2,
+        "importPath": "backend.app.main",
+        "description": "backend.app.main",
+        "peekOfCode": "def health_check():\n    return {\"status\": \"OK\"}",
+        "detail": "backend.app.main",
+        "documentation": {}
+    },
+    {
+        "label": "app",
+        "kind": 5,
+        "importPath": "backend.app.main",
+        "description": "backend.app.main",
+        "peekOfCode": "app = FastAPI(title=\"Finance App API\", docs_url=\"/api/docs\", redoc_url=\"/api/redoc\")\napp.state.limiter = limiter\napp.add_exception_handler(RateLimitExceeded, _rate_limit_exceeded_handler)\napp.add_middleware(SlowAPIMiddleware)\napp.add_middleware(\n    CORSMiddleware,\n    allow_origins=[\"http://localhost:3000\", \"http://127.0.0.1:3000\"],\n    allow_credentials=True,\n    allow_methods=[\"GET\", \"POST\", \"PUT\", \"DELETE\"],\n    allow_headers=[\"*\"],",
+        "detail": "backend.app.main",
+        "documentation": {}
+    },
+    {
+        "label": "app.state.limiter",
+        "kind": 5,
+        "importPath": "backend.app.main",
+        "description": "backend.app.main",
+        "peekOfCode": "app.state.limiter = limiter\napp.add_exception_handler(RateLimitExceeded, _rate_limit_exceeded_handler)\napp.add_middleware(SlowAPIMiddleware)\napp.add_middleware(\n    CORSMiddleware,\n    allow_origins=[\"http://localhost:3000\", \"http://127.0.0.1:3000\"],\n    allow_credentials=True,\n    allow_methods=[\"GET\", \"POST\", \"PUT\", \"DELETE\"],\n    allow_headers=[\"*\"],\n)",
+        "detail": "backend.app.main",
+        "documentation": {}
+    },
+    {
+        "label": "scheduler",
+        "kind": 5,
+        "importPath": "backend.app.main",
+        "description": "backend.app.main",
+        "peekOfCode": "scheduler = BackgroundScheduler(timezone=\"Asia/Tashkent\")\ndef daily_report_job():\n    db = SessionLocal()\n    try:\n        send_daily_reports_to_all(db)\n    finally:\n        db.close()\nscheduler.add_job(\n    daily_report_job,\n    CronTrigger(hour=21, minute=0),",
+        "detail": "backend.app.main",
+        "documentation": {}
+    },
+    {
+        "label": "_Known",
+        "kind": 6,
+        "importPath": "frontend.node_modules.flatted.python.flatted",
+        "description": "frontend.node_modules.flatted.python.flatted",
+        "peekOfCode": "class _Known:\n    def __init__(self):\n        self.key = []\n        self.value = []\nclass _String:\n    def __init__(self, value):\n        self.value = value\ndef _array_keys(value):\n    for i in range(len(value)):\n        yield i",
+        "detail": "frontend.node_modules.flatted.python.flatted",
+        "documentation": {}
+    },
+    {
+        "label": "_String",
+        "kind": 6,
+        "importPath": "frontend.node_modules.flatted.python.flatted",
+        "description": "frontend.node_modules.flatted.python.flatted",
+        "peekOfCode": "class _String:\n    def __init__(self, value):\n        self.value = value\ndef _array_keys(value):\n    for i in range(len(value)):\n        yield i\ndef _object_keys(value):\n    for key in value:\n        yield key\ndef _is_array(value):",
+        "detail": "frontend.node_modules.flatted.python.flatted",
+        "documentation": {}
+    },
+    {
+        "label": "parse",
+        "kind": 2,
+        "importPath": "frontend.node_modules.flatted.python.flatted",
+        "description": "frontend.node_modules.flatted.python.flatted",
+        "peekOfCode": "def parse(value, *args, **kwargs):\n    json = _json.loads(value, *args, **kwargs)\n    wrapped = []\n    for value in json:\n        wrapped.append(_wrap(value))\n    input = []\n    for value in wrapped:\n        if isinstance(value, _String):\n            input.append(value.value)\n        else:",
+        "detail": "frontend.node_modules.flatted.python.flatted",
+        "documentation": {}
+    },
+    {
+        "label": "stringify",
+        "kind": 2,
+        "importPath": "frontend.node_modules.flatted.python.flatted",
+        "description": "frontend.node_modules.flatted.python.flatted",
+        "peekOfCode": "def stringify(value, *args, **kwargs):\n    known = _Known()\n    input = []\n    output = []\n    i = int(_index(known, input, value))\n    while i < len(input):\n        output.append(_transform(known, input, input[i]))\n        i += 1\n    return _json.dumps(output, *args, **kwargs)",
+        "detail": "frontend.node_modules.flatted.python.flatted",
+        "documentation": {}
+    }
+]
