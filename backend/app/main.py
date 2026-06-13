@@ -28,6 +28,7 @@ app.add_middleware(
     CORSMiddleware,
     allow_origins=[
         "http://localhost:3000",
+        "https://finance-app-nj6h.vercel.app",
         "https://finance-app-nj6h-c2x0qmsat-fayzullohumidjanovs-projects.vercel.app",
     ],
     allow_credentials=True,
