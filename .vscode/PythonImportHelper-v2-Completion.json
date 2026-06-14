@@ -256,6 +256,14 @@
         "documentation": {}
     },
     {
+        "label": "Response",
+        "importPath": "fastapi.responses",
+        "description": "fastapi.responses",
+        "isExtraImport": true,
+        "detail": "fastapi.responses",
+        "documentation": {}
+    },
+    {
         "label": "StreamingResponse",
         "importPath": "fastapi.responses",
         "description": "fastapi.responses",
@@ -425,14 +433,6 @@
     },
     {
         "label": "func",
-        "importPath": "sqlalchemy",
-        "description": "sqlalchemy",
-        "isExtraImport": true,
-        "detail": "sqlalchemy",
-        "documentation": {}
-    },
-    {
-        "label": "extract",
         "importPath": "sqlalchemy",
         "description": "sqlalchemy",
         "isExtraImport": true,
@@ -781,14 +781,6 @@
         "documentation": {}
     },
     {
-        "label": "datetime",
-        "importPath": "datetime",
-        "description": "datetime",
-        "isExtraImport": true,
-        "detail": "datetime",
-        "documentation": {}
-    },
-    {
         "label": "timedelta",
         "importPath": "datetime",
         "description": "datetime",
@@ -828,6 +820,15 @@
         "description": "email.mime.multipart",
         "isExtraImport": true,
         "detail": "email.mime.multipart",
+        "documentation": {}
+    },
+    {
+        "label": "logging",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "logging",
+        "description": "logging",
+        "detail": "logging",
         "documentation": {}
     },
     {
@@ -1276,7 +1277,25 @@
         "kind": 2,
         "importPath": "backend.app.routers.dashboard",
         "description": "backend.app.routers.dashboard",
-        "peekOfCode": "def send_monthly_report(\n    db: Session = Depends(get_db), current_user: User = Depends(get_current_user)\n):\n    now = datetime.utcnow()\n    month_names = {\n        1: \"Yanvar\",\n        2: \"Fevral\",\n        3: \"Mart\",\n        4: \"Aprel\",\n        5: \"May\",",
+        "peekOfCode": "def send_monthly_report(\n    db: Session = Depends(get_db),\n    current_user: User = Depends(get_current_user)\n):\n    now = datetime.utcnow()\n    income = db.query(func.sum(Transaction.amount)).filter(\n        Transaction.user_id == current_user.id,\n        Transaction.type == TransactionType.INCOME,\n        Transaction.month == now.month,\n        Transaction.year == now.year,",
+        "detail": "backend.app.routers.dashboard",
+        "documentation": {}
+    },
+    {
+        "label": "export_monthly_pdf",
+        "kind": 2,
+        "importPath": "backend.app.routers.dashboard",
+        "description": "backend.app.routers.dashboard",
+        "peekOfCode": "def export_monthly_pdf(\n    month: int = None,\n    year: int = None,\n    download: bool = True,\n    db: Session = Depends(get_db),\n    current_user: User = Depends(get_current_user)\n):\n    now = datetime.utcnow()\n    if not month: month = now.month\n    if not year: year = now.year",
+        "detail": "backend.app.routers.dashboard",
+        "documentation": {}
+    },
+    {
+        "label": "export_all_pdf",
+        "kind": 2,
+        "importPath": "backend.app.routers.dashboard",
+        "description": "backend.app.routers.dashboard",
+        "peekOfCode": "def export_all_pdf(\n    download: bool = True,\n    db: Session = Depends(get_db),\n    current_user: User = Depends(get_current_user)\n):\n    transactions = db.query(Transaction).filter(\n        Transaction.user_id == current_user.id\n    ).order_by(Transaction.date.desc()).all()\n    total_income = db.query(func.sum(Transaction.amount)).filter(\n        Transaction.user_id == current_user.id,",
         "detail": "backend.app.routers.dashboard",
         "documentation": {}
     },
@@ -1285,7 +1304,7 @@
         "kind": 2,
         "importPath": "backend.app.routers.dashboard",
         "description": "backend.app.routers.dashboard",
-        "peekOfCode": "def get_summary(\n    db: Session = Depends(get_db), current_user: User = Depends(get_current_user)\n):\n    now = datetime.utcnow()\n    # Bu oylik\n    monthly_income = (\n        db.query(func.sum(Transaction.amount))\n        .filter(\n            Transaction.user_id == current_user.id,\n            Transaction.type == TransactionType.INCOME,",
+        "peekOfCode": "def get_summary(\n    db: Session = Depends(get_db),\n    current_user: User = Depends(get_current_user)\n):\n    now = datetime.utcnow()\n    monthly_income = db.query(func.sum(Transaction.amount)).filter(\n        Transaction.user_id == current_user.id,\n        Transaction.type == TransactionType.INCOME,\n        Transaction.month == now.month,\n        Transaction.year == now.year,",
         "detail": "backend.app.routers.dashboard",
         "documentation": {}
     },
@@ -1294,7 +1313,7 @@
         "kind": 2,
         "importPath": "backend.app.routers.dashboard",
         "description": "backend.app.routers.dashboard",
-        "peekOfCode": "def get_monthly_summary(\n    year: int = None,\n    db: Session = Depends(get_db),\n    current_user: User = Depends(get_current_user),\n):\n    now = datetime.utcnow()\n    if not year:\n        year = now.year\n    if year < 2000 or year > 2100:\n        raise HTTPException(status_code=400, detail=\"Yil noto'g'ri!\")",
+        "peekOfCode": "def get_monthly_summary(\n    year: int = None,\n    db: Session = Depends(get_db),\n    current_user: User = Depends(get_current_user),\n):\n    now = datetime.utcnow()\n    if not year: year = now.year\n    if year < 2000 or year > 2100:\n        raise HTTPException(status_code=400, detail=\"Yil noto'g'ri!\")\n    result = []",
         "detail": "backend.app.routers.dashboard",
         "documentation": {}
     },
@@ -1303,7 +1322,7 @@
         "kind": 2,
         "importPath": "backend.app.routers.dashboard",
         "description": "backend.app.routers.dashboard",
-        "peekOfCode": "def get_yearly_summary(\n    db: Session = Depends(get_db), current_user: User = Depends(get_current_user)\n):\n    years_query = (\n        db.query(Transaction.year)\n        .filter(Transaction.user_id == current_user.id)\n        .distinct()\n        .all()\n    )\n    result = []",
+        "peekOfCode": "def get_yearly_summary(\n    db: Session = Depends(get_db),\n    current_user: User = Depends(get_current_user)\n):\n    years_query = db.query(Transaction.year).filter(\n        Transaction.user_id == current_user.id\n    ).distinct().all()\n    result = []\n    for row in years_query:\n        year = row[0]",
         "detail": "backend.app.routers.dashboard",
         "documentation": {}
     },
@@ -1321,7 +1340,7 @@
         "kind": 2,
         "importPath": "backend.app.routers.dashboard",
         "description": "backend.app.routers.dashboard",
-        "peekOfCode": "def get_recent(\n    limit: int = 10,\n    db: Session = Depends(get_db),\n    current_user: User = Depends(get_current_user),\n):\n    transactions = (\n        db.query(Transaction)\n        .filter(Transaction.user_id == current_user.id)\n        .order_by(Transaction.date.desc())\n        .limit(limit)",
+        "peekOfCode": "def get_recent(\n    limit: int = 10,\n    db: Session = Depends(get_db),\n    current_user: User = Depends(get_current_user),\n):\n    transactions = db.query(Transaction).filter(\n        Transaction.user_id == current_user.id\n    ).order_by(Transaction.date.desc()).limit(limit).all()\n    return [\n        {",
         "detail": "backend.app.routers.dashboard",
         "documentation": {}
     },
@@ -1330,7 +1349,7 @@
         "kind": 2,
         "importPath": "backend.app.routers.dashboard",
         "description": "backend.app.routers.dashboard",
-        "peekOfCode": "def get_today(\n    db: Session = Depends(get_db), current_user: User = Depends(get_current_user)\n):\n    now = datetime.utcnow()\n    today_income = (\n        db.query(func.sum(Transaction.amount))\n        .filter(\n            Transaction.user_id == current_user.id,\n            Transaction.type == TransactionType.INCOME,\n            func.date(Transaction.date) == now.date(),",
+        "peekOfCode": "def get_today(\n    db: Session = Depends(get_db),\n    current_user: User = Depends(get_current_user)\n):\n    now = datetime.utcnow()\n    today_income = db.query(func.sum(Transaction.amount)).filter(\n        Transaction.user_id == current_user.id,\n        Transaction.type == TransactionType.INCOME,\n        func.date(Transaction.date) == now.date(),\n    ).scalar() or 0",
         "detail": "backend.app.routers.dashboard",
         "documentation": {}
     },
@@ -1339,7 +1358,16 @@
         "kind": 5,
         "importPath": "backend.app.routers.dashboard",
         "description": "backend.app.routers.dashboard",
-        "peekOfCode": "router = APIRouter()\n@router.post(\"/send-monthly-report\")\ndef send_monthly_report(\n    db: Session = Depends(get_db), current_user: User = Depends(get_current_user)\n):\n    now = datetime.utcnow()\n    month_names = {\n        1: \"Yanvar\",\n        2: \"Fevral\",\n        3: \"Mart\",",
+        "peekOfCode": "router = APIRouter()\nMONTH_NAMES = {\n    1: \"Yanvar\", 2: \"Fevral\", 3: \"Mart\", 4: \"Aprel\",\n    5: \"May\", 6: \"Iyun\", 7: \"Iyul\", 8: \"Avgust\",\n    9: \"Sentabr\", 10: \"Oktabr\", 11: \"Noyabr\", 12: \"Dekabr\",\n}\n@router.post(\"/send-monthly-report\")\ndef send_monthly_report(\n    db: Session = Depends(get_db),\n    current_user: User = Depends(get_current_user)",
+        "detail": "backend.app.routers.dashboard",
+        "documentation": {}
+    },
+    {
+        "label": "MONTH_NAMES",
+        "kind": 5,
+        "importPath": "backend.app.routers.dashboard",
+        "description": "backend.app.routers.dashboard",
+        "peekOfCode": "MONTH_NAMES = {\n    1: \"Yanvar\", 2: \"Fevral\", 3: \"Mart\", 4: \"Aprel\",\n    5: \"May\", 6: \"Iyun\", 7: \"Iyul\", 8: \"Avgust\",\n    9: \"Sentabr\", 10: \"Oktabr\", 11: \"Noyabr\", 12: \"Dekabr\",\n}\n@router.post(\"/send-monthly-report\")\ndef send_monthly_report(\n    db: Session = Depends(get_db),\n    current_user: User = Depends(get_current_user)\n):",
         "detail": "backend.app.routers.dashboard",
         "documentation": {}
     },
@@ -1519,7 +1547,7 @@
         "kind": 2,
         "importPath": "backend.app.services.email_service",
         "description": "backend.app.services.email_service",
-        "peekOfCode": "def send_email(to_email: str, subject: str, html_content: str):\n    \"\"\"Email yuborish\"\"\"\n    try:\n        msg = MIMEMultipart(\"alternative\")\n        msg[\"Subject\"] = subject\n        msg[\"From\"] = settings.MAIL_FROM\n        msg[\"To\"] = to_email\n        html_part = MIMEText(html_content, \"html\")\n        msg.attach(html_part)\n        with smtplib.SMTP(settings.MAIL_SERVER, settings.MAIL_PORT) as server:",
+        "peekOfCode": "def send_email(to_email: str, subject: str, html_content: str):\n    try:\n        msg = MIMEMultipart(\"alternative\")\n        msg[\"Subject\"] = subject\n        msg[\"From\"] = settings.MAIL_FROM\n        msg[\"To\"] = to_email\n        msg.attach(MIMEText(html_content, \"html\", \"utf-8\"))\n        with smtplib.SMTP(settings.MAIL_SERVER, int(settings.MAIL_PORT)) as server:\n            server.ehlo()\n            server.starttls()",
         "detail": "backend.app.services.email_service",
         "documentation": {}
     },
@@ -1528,7 +1556,7 @@
         "kind": 2,
         "importPath": "backend.app.services.email_service",
         "description": "backend.app.services.email_service",
-        "peekOfCode": "def send_welcome_email(to_email: str, full_name: str):\n    \"\"\"Ro'yxatdan o'tganda xush kelibsiz email\"\"\"\n    subject = \"💰 Finance App ga xush kelibsiz!\"\n    html = f\"\"\"\n    <!DOCTYPE html>\n    <html>\n    <body style=\"font-family: Arial, sans-serif; background: #14213D; padding: 20px;\">\n        <div style=\"max-width: 600px; margin: 0 auto; background: #1a2a4a; border-radius: 16px; padding: 40px; border: 1px solid #FCA311;\">\n            <h1 style=\"color: #FCA311; text-align: center;\">💰 Finance App</h1>\n            <h2 style=\"color: #E5E5E5;\">Assalomu alaykum, {full_name}! 👋</h2>",
+        "peekOfCode": "def send_welcome_email(to_email: str, full_name: str):\n    subject = \"💰 Finance App ga xush kelibsiz!\"\n    html = f\"\"\"\n    <!DOCTYPE html>\n    <html>\n    <body style=\"font-family: Arial, sans-serif; background: #14213D; padding: 20px;\">\n        <div style=\"max-width: 600px; margin: 0 auto; background: #1a2a4a; border-radius: 16px; padding: 40px; border: 1px solid #FCA311;\">\n            <h1 style=\"color: #FCA311; text-align: center;\">💰 Finance App</h1>\n            <h2 style=\"color: #E5E5E5;\">Assalomu alaykum, {full_name}! 👋</h2>\n            <p style=\"color: #E5E5E5; font-size: 16px;\">Finance App ga muvaffaqiyatli ro'yxatdan o'tdingiz!</p>",
         "detail": "backend.app.services.email_service",
         "documentation": {}
     },
@@ -1537,7 +1565,7 @@
         "kind": 2,
         "importPath": "backend.app.services.email_service",
         "description": "backend.app.services.email_service",
-        "peekOfCode": "def send_monthly_report_email(\n    to_email: str,\n    full_name: str,\n    month_name: str,\n    income: float,\n    expense: float,\n    savings: float,\n):\n    \"\"\"Oylik hisobot email\"\"\"\n    subject = f\"📊 {month_name} oylik moliyaviy hisobotingiz\"",
+        "peekOfCode": "def send_monthly_report_email(\n    to_email: str,\n    full_name: str,\n    month_name: str,\n    income: float,\n    expense: float,\n    savings: float,\n):\n    subject = f\"📊 {month_name} oylik moliyaviy hisobotingiz\"\n    savings_color = \"#38ef7d\" if savings >= 0 else \"#eb3349\"",
         "detail": "backend.app.services.email_service",
         "documentation": {}
     },
@@ -1546,7 +1574,25 @@
         "kind": 2,
         "importPath": "backend.app.services.email_service",
         "description": "backend.app.services.email_service",
-        "peekOfCode": "def send_big_expense_alert(\n    to_email: str, full_name: str, amount: float, category: str, balance: float\n):\n    \"\"\"Katta chiqim ogohlantirishk\"\"\"\n    subject = f\"⚠️ Katta chiqim: {amount:,.0f} so'm\"\n    html = f\"\"\"\n    <!DOCTYPE html>\n    <html>\n    <body style=\"font-family: Arial, sans-serif; background: #14213D; padding: 20px;\">\n        <div style=\"max-width: 600px; margin: 0 auto; background: #1a2a4a; border-radius: 16px; padding: 40px; border: 2px solid #eb3349;\">",
+        "peekOfCode": "def send_big_expense_alert(\n    to_email: str, full_name: str, amount: float, category: str, balance: float\n):\n    subject = f\"⚠️ Katta chiqim: {amount:,.0f} so'm\"\n    html = f\"\"\"\n    <!DOCTYPE html>\n    <html>\n    <body style=\"font-family: Arial, sans-serif; background: #14213D; padding: 20px;\">\n        <div style=\"max-width: 600px; margin: 0 auto; background: #1a2a4a; border-radius: 16px; padding: 40px; border: 2px solid #eb3349;\">\n            <h1 style=\"color: #FCA311; text-align: center;\">💰 Finance App</h1>",
+        "detail": "backend.app.services.email_service",
+        "documentation": {}
+    },
+    {
+        "label": "logger",
+        "kind": 5,
+        "importPath": "backend.app.services.email_service",
+        "description": "backend.app.services.email_service",
+        "peekOfCode": "logger = logging.getLogger(__name__)\nSITE_URL = \"https://finance-app-nj6h.vercel.app\"\ndef send_email(to_email: str, subject: str, html_content: str):\n    try:\n        msg = MIMEMultipart(\"alternative\")\n        msg[\"Subject\"] = subject\n        msg[\"From\"] = settings.MAIL_FROM\n        msg[\"To\"] = to_email\n        msg.attach(MIMEText(html_content, \"html\", \"utf-8\"))\n        with smtplib.SMTP(settings.MAIL_SERVER, int(settings.MAIL_PORT)) as server:",
+        "detail": "backend.app.services.email_service",
+        "documentation": {}
+    },
+    {
+        "label": "SITE_URL",
+        "kind": 5,
+        "importPath": "backend.app.services.email_service",
+        "description": "backend.app.services.email_service",
+        "peekOfCode": "SITE_URL = \"https://finance-app-nj6h.vercel.app\"\ndef send_email(to_email: str, subject: str, html_content: str):\n    try:\n        msg = MIMEMultipart(\"alternative\")\n        msg[\"Subject\"] = subject\n        msg[\"From\"] = settings.MAIL_FROM\n        msg[\"To\"] = to_email\n        msg.attach(MIMEText(html_content, \"html\", \"utf-8\"))\n        with smtplib.SMTP(settings.MAIL_SERVER, int(settings.MAIL_PORT)) as server:\n            server.ehlo()",
         "detail": "backend.app.services.email_service",
         "documentation": {}
     },

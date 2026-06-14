@@ -1,128 +1,219 @@
 from fastapi import APIRouter, Depends, HTTPException
+from fastapi.responses import Response
 from sqlalchemy.orm import Session
-from sqlalchemy import func, extract
+from sqlalchemy import func
 from datetime import datetime
 from ..database import get_db
 from ..models.transaction import Transaction, TransactionType
 from ..models.user import User
 from .auth import get_current_user
 from ..services.email_service import send_monthly_report_email
-import threading
+from ..services.pdf_service import generate_monthly_pdf, generate_all_transactions_pdf
 
 router = APIRouter()
+
+MONTH_NAMES = {
+    1: "Yanvar", 2: "Fevral", 3: "Mart", 4: "Aprel",
+    5: "May", 6: "Iyun", 7: "Iyul", 8: "Avgust",
+    9: "Sentabr", 10: "Oktabr", 11: "Noyabr", 12: "Dekabr",
+}
 
 
 @router.post("/send-monthly-report")
 def send_monthly_report(
-    db: Session = Depends(get_db), current_user: User = Depends(get_current_user)
+    db: Session = Depends(get_db),
+    current_user: User = Depends(get_current_user)
 ):
     now = datetime.utcnow()
-    month_names = {
-        1: "Yanvar",
-        2: "Fevral",
-        3: "Mart",
-        4: "Aprel",
-        5: "May",
-        6: "Iyun",
-        7: "Iyul",
-        8: "Avgust",
-        9: "Sentabr",
-        10: "Oktabr",
-        11: "Noyabr",
-        12: "Dekabr",
-    }
 
-    income = (
-        db.query(func.sum(Transaction.amount))
-        .filter(
-            Transaction.user_id == current_user.id,
-            Transaction.type == TransactionType.INCOME,
-            Transaction.month == now.month,
-            Transaction.year == now.year,
-        )
-        .scalar()
-        or 0
+    income = db.query(func.sum(Transaction.amount)).filter(
+        Transaction.user_id == current_user.id,
+        Transaction.type == TransactionType.INCOME,
+        Transaction.month == now.month,
+        Transaction.year == now.year,
+    ).scalar() or 0
+
+    expense = db.query(func.sum(Transaction.amount)).filter(
+        Transaction.user_id == current_user.id,
+        Transaction.type == TransactionType.EXPENSE,
+        Transaction.month == now.month,
+        Transaction.year == now.year,
+    ).scalar() or 0
+
+    result = send_monthly_report_email(
+        current_user.email,
+        current_user.full_name or current_user.email,
+        MONTH_NAMES[now.month],
+        income,
+        expense,
+        income - expense,
     )
 
-    expense = (
-        db.query(func.sum(Transaction.amount))
-        .filter(
-            Transaction.user_id == current_user.id,
-            Transaction.type == TransactionType.EXPENSE,
-            Transaction.month == now.month,
-            Transaction.year == now.year,
-        )
-        .scalar()
-        or 0
+    if result:
+        return {"message": f"Hisobot {current_user.email} ga yuborildi!"}
+    else:
+        return {"message": "Email yuborishda xato! Sozlamalarni tekshiring.", "error": True}
+
+
+@router.get("/export/monthly-pdf")
+def export_monthly_pdf(
+    month: int = None,
+    year: int = None,
+    download: bool = True,
+    db: Session = Depends(get_db),
+    current_user: User = Depends(get_current_user)
+):
+    now = datetime.utcnow()
+    if not month: month = now.month
+    if not year: year = now.year
+
+    income = db.query(func.sum(Transaction.amount)).filter(
+        Transaction.user_id == current_user.id,
+        Transaction.type == TransactionType.INCOME,
+        Transaction.month == month,
+        Transaction.year == year
+    ).scalar() or 0
+
+    expense = db.query(func.sum(Transaction.amount)).filter(
+        Transaction.user_id == current_user.id,
+        Transaction.type == TransactionType.EXPENSE,
+        Transaction.month == month,
+        Transaction.year == year
+    ).scalar() or 0
+
+    transactions = db.query(Transaction).filter(
+        Transaction.user_id == current_user.id,
+        Transaction.month == month,
+        Transaction.year == year
+    ).order_by(Transaction.date.desc()).all()
+
+    category_data = {}
+    for t in transactions:
+        if t.type == TransactionType.EXPENSE:
+            category_data[t.category] = category_data.get(t.category, 0) + t.amount
+
+    tx_list = [
+        {
+            "date": t.date,
+            "type": t.type.value if hasattr(t.type, "value") else t.type,
+            "category": t.category,
+            "description": t.description,
+            "amount": t.amount,
+        }
+        for t in transactions
+    ]
+
+    pdf_buffer = generate_monthly_pdf(
+        full_name=current_user.full_name or current_user.email,
+        email=current_user.email,
+        month_name=MONTH_NAMES[month],
+        year=year,
+        income=income,
+        expense=expense,
+        savings=income - expense,
+        transactions=tx_list,
+        category_data=category_data,
     )
 
-    threading.Thread(
-        target=send_monthly_report_email,
-        args=(
-            current_user.email,
-            current_user.full_name,
-            month_names[now.month],
-            income,
-            expense,
-            income - expense,
-        ),
-    ).start()
+    pdf_bytes = pdf_buffer.read()
+    filename = f"hisobot_{MONTH_NAMES[month]}_{year}.pdf"
+    disposition = "attachment" if download else "inline"
 
-    return {"message": f"Hisobot {current_user.email} ga yuborildi!"}
+    return Response(
+        content=pdf_bytes,
+        media_type="application/pdf",
+        headers={
+            "Content-Disposition": f"{disposition}; filename={filename}",
+            "Content-Length": str(len(pdf_bytes)),
+            "Access-Control-Expose-Headers": "Content-Disposition",
+        }
+    )
 
 
-# --- Umumiy summary ---
+@router.get("/export/all-pdf")
+def export_all_pdf(
+    download: bool = True,
+    db: Session = Depends(get_db),
+    current_user: User = Depends(get_current_user)
+):
+    transactions = db.query(Transaction).filter(
+        Transaction.user_id == current_user.id
+    ).order_by(Transaction.date.desc()).all()
+
+    total_income = db.query(func.sum(Transaction.amount)).filter(
+        Transaction.user_id == current_user.id,
+        Transaction.type == TransactionType.INCOME
+    ).scalar() or 0
+
+    total_expense = db.query(func.sum(Transaction.amount)).filter(
+        Transaction.user_id == current_user.id,
+        Transaction.type == TransactionType.EXPENSE
+    ).scalar() or 0
+
+    tx_list = [
+        {
+            "date": t.date,
+            "type": t.type.value if hasattr(t.type, "value") else t.type,
+            "category": t.category,
+            "description": t.description,
+            "amount": t.amount,
+        }
+        for t in transactions
+    ]
+
+    pdf_buffer = generate_all_transactions_pdf(
+        full_name=current_user.full_name or current_user.email,
+        email=current_user.email,
+        balance=current_user.balance,
+        total_income=total_income,
+        total_expense=total_expense,
+        transactions=tx_list,
+    )
+
+    pdf_bytes = pdf_buffer.read()
+    disposition = "attachment" if download else "inline"
+
+    return Response(
+        content=pdf_bytes,
+        media_type="application/pdf",
+        headers={
+            "Content-Disposition": f"{disposition}; filename=barcha_transactionlar.pdf",
+            "Content-Length": str(len(pdf_bytes)),
+            "Access-Control-Expose-Headers": "Content-Disposition",
+        }
+    )
+
+
 @router.get("/summary")
 def get_summary(
-    db: Session = Depends(get_db), current_user: User = Depends(get_current_user)
+    db: Session = Depends(get_db),
+    current_user: User = Depends(get_current_user)
 ):
     now = datetime.utcnow()
 
-    # Bu oylik
-    monthly_income = (
-        db.query(func.sum(Transaction.amount))
-        .filter(
-            Transaction.user_id == current_user.id,
-            Transaction.type == TransactionType.INCOME,
-            Transaction.month == now.month,
-            Transaction.year == now.year,
-        )
-        .scalar()
-        or 0
-    )
+    monthly_income = db.query(func.sum(Transaction.amount)).filter(
+        Transaction.user_id == current_user.id,
+        Transaction.type == TransactionType.INCOME,
+        Transaction.month == now.month,
+        Transaction.year == now.year,
+    ).scalar() or 0
 
-    monthly_expense = (
-        db.query(func.sum(Transaction.amount))
-        .filter(
-            Transaction.user_id == current_user.id,
-            Transaction.type == TransactionType.EXPENSE,
-            Transaction.month == now.month,
-            Transaction.year == now.year,
-        )
-        .scalar()
-        or 0
-    )
+    monthly_expense = db.query(func.sum(Transaction.amount)).filter(
+        Transaction.user_id == current_user.id,
+        Transaction.type == TransactionType.EXPENSE,
+        Transaction.month == now.month,
+        Transaction.year == now.year,
+    ).scalar() or 0
 
-    # Jami barcha vaqt
-    total_income = (
-        db.query(func.sum(Transaction.amount))
-        .filter(
-            Transaction.user_id == current_user.id,
-            Transaction.type == TransactionType.INCOME,
-        )
-        .scalar()
-        or 0
-    )
+    total_income = db.query(func.sum(Transaction.amount)).filter(
+        Transaction.user_id == current_user.id,
+        Transaction.type == TransactionType.INCOME,
+    ).scalar() or 0
 
-    total_expense = (
-        db.query(func.sum(Transaction.amount))
-        .filter(
-            Transaction.user_id == current_user.id,
-            Transaction.type == TransactionType.EXPENSE,
-        )
-        .scalar()
-        or 0
-    )
+    total_expense = db.query(func.sum(Transaction.amount)).filter(
+        Transaction.user_id == current_user.id,
+        Transaction.type == TransactionType.EXPENSE,
+    ).scalar() or 0
 
     return {
         "balance": current_user.balance,
@@ -139,7 +230,6 @@ def get_summary(
     }
 
 
-# --- Oylik summalar (har oy alohida) ---
 @router.get("/monthly-summary")
 def get_monthly_summary(
     year: int = None,
@@ -147,116 +237,72 @@ def get_monthly_summary(
     current_user: User = Depends(get_current_user),
 ):
     now = datetime.utcnow()
-    if not year:
-        year = now.year
+    if not year: year = now.year
     if year < 2000 or year > 2100:
         raise HTTPException(status_code=400, detail="Yil noto'g'ri!")
 
-    month_names = {
-        1: "Yanvar",
-        2: "Fevral",
-        3: "Mart",
-        4: "Aprel",
-        5: "May",
-        6: "Iyun",
-        7: "Iyul",
-        8: "Avgust",
-        9: "Sentabr",
-        10: "Oktabr",
-        11: "Noyabr",
-        12: "Dekabr",
-    }
-
     result = []
     for month in range(1, 13):
-        income = (
-            db.query(func.sum(Transaction.amount))
-            .filter(
-                Transaction.user_id == current_user.id,
-                Transaction.type == TransactionType.INCOME,
-                Transaction.month == month,
-                Transaction.year == year,
-            )
-            .scalar()
-            or 0
-        )
+        income = db.query(func.sum(Transaction.amount)).filter(
+            Transaction.user_id == current_user.id,
+            Transaction.type == TransactionType.INCOME,
+            Transaction.month == month,
+            Transaction.year == year,
+        ).scalar() or 0
 
-        expense = (
-            db.query(func.sum(Transaction.amount))
-            .filter(
-                Transaction.user_id == current_user.id,
-                Transaction.type == TransactionType.EXPENSE,
-                Transaction.month == month,
-                Transaction.year == year,
-            )
-            .scalar()
-            or 0
-        )
+        expense = db.query(func.sum(Transaction.amount)).filter(
+            Transaction.user_id == current_user.id,
+            Transaction.type == TransactionType.EXPENSE,
+            Transaction.month == month,
+            Transaction.year == year,
+        ).scalar() or 0
 
-        result.append(
-            {
-                "oy": month,
-                "oy_name": month_names[month],
-                "yil": year,
-                "kirim": income,
-                "chiqim": expense,
-                "hozirgi_summa": income - expense,
-            }
-        )
+        result.append({
+            "oy": month,
+            "oy_name": MONTH_NAMES[month],
+            "yil": year,
+            "kirim": income,
+            "chiqim": expense,
+            "hozirgi_summa": income - expense,
+        })
 
     return result
 
 
-# --- Yillik summary ---
 @router.get("/yearly-summary")
 def get_yearly_summary(
-    db: Session = Depends(get_db), current_user: User = Depends(get_current_user)
+    db: Session = Depends(get_db),
+    current_user: User = Depends(get_current_user)
 ):
-    years_query = (
-        db.query(Transaction.year)
-        .filter(Transaction.user_id == current_user.id)
-        .distinct()
-        .all()
-    )
+    years_query = db.query(Transaction.year).filter(
+        Transaction.user_id == current_user.id
+    ).distinct().all()
 
     result = []
     for row in years_query:
         year = row[0]
-        income = (
-            db.query(func.sum(Transaction.amount))
-            .filter(
-                Transaction.user_id == current_user.id,
-                Transaction.type == TransactionType.INCOME,
-                Transaction.year == year,
-            )
-            .scalar()
-            or 0
-        )
+        income = db.query(func.sum(Transaction.amount)).filter(
+            Transaction.user_id == current_user.id,
+            Transaction.type == TransactionType.INCOME,
+            Transaction.year == year,
+        ).scalar() or 0
 
-        expense = (
-            db.query(func.sum(Transaction.amount))
-            .filter(
-                Transaction.user_id == current_user.id,
-                Transaction.type == TransactionType.EXPENSE,
-                Transaction.year == year,
-            )
-            .scalar()
-            or 0
-        )
+        expense = db.query(func.sum(Transaction.amount)).filter(
+            Transaction.user_id == current_user.id,
+            Transaction.type == TransactionType.EXPENSE,
+            Transaction.year == year,
+        ).scalar() or 0
 
-        result.append(
-            {
-                "year": year,
-                "income": income,
-                "expense": expense,
-                "savings": income - expense,
-            }
-        )
+        result.append({
+            "year": year,
+            "income": income,
+            "expense": expense,
+            "savings": income - expense,
+        })
 
     return sorted(result, key=lambda x: x["year"])
 
 
-# --- Kategoriya bo'yicha ---
 @router.get("/by-category")
 def get_by_category(
     month: int = None,
@@ -294,29 +340,20 @@ def get_by_category(
     incomes = income_query.group_by(Transaction.category).all()
 
     return {
-        "expense_by_category": [
-            {"category": r.category, "total": r.total} for r in expenses
-        ],
-        "income_by_category": [
-            {"category": r.category, "total": r.total} for r in incomes
-        ],
+        "expense_by_category": [{"category": r.category, "total": r.total} for r in expenses],
+        "income_by_category": [{"category": r.category, "total": r.total} for r in incomes],
     }
 
 
-# --- Oxirgi transactionlar ---
 @router.get("/recent")
 def get_recent(
     limit: int = 10,
     db: Session = Depends(get_db),
     current_user: User = Depends(get_current_user),
 ):
-    transactions = (
-        db.query(Transaction)
-        .filter(Transaction.user_id == current_user.id)
-        .order_by(Transaction.date.desc())
-        .limit(limit)
-        .all()
-    )
+    transactions = db.query(Transaction).filter(
+        Transaction.user_id == current_user.id
+    ).order_by(Transaction.date.desc()).limit(limit).all()
 
     return [
         {
@@ -333,34 +370,24 @@ def get_recent(
     ]
 
 
-# --- Bugungi summary ---
 @router.get("/today")
 def get_today(
-    db: Session = Depends(get_db), current_user: User = Depends(get_current_user)
+    db: Session = Depends(get_db),
+    current_user: User = Depends(get_current_user)
 ):
     now = datetime.utcnow()
 
-    today_income = (
-        db.query(func.sum(Transaction.amount))
-        .filter(
-            Transaction.user_id == current_user.id,
-            Transaction.type == TransactionType.INCOME,
-            func.date(Transaction.date) == now.date(),
-        )
-        .scalar()
-        or 0
-    )
+    today_income = db.query(func.sum(Transaction.amount)).filter(
+        Transaction.user_id == current_user.id,
+        Transaction.type == TransactionType.INCOME,
+        func.date(Transaction.date) == now.date(),
+    ).scalar() or 0
 
-    today_expense = (
-        db.query(func.sum(Transaction.amount))
-        .filter(
-            Transaction.user_id == current_user.id,
-            Transaction.type == TransactionType.EXPENSE,
-            func.date(Transaction.date) == now.date(),
-        )
-        .scalar()
-        or 0
-    )
+    today_expense = db.query(func.sum(Transaction.amount)).filter(
+        Transaction.user_id == current_user.id,
+        Transaction.type == TransactionType.EXPENSE,
+        func.date(Transaction.date) == now.date(),
+    ).scalar() or 0
 
     return {
         "sana": now.date(),
