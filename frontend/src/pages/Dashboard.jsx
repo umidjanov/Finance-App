@@ -25,84 +25,6 @@ export default function Dashboard() {
   const [filterYear, setFilterYear] = useState(
     new Date().getFullYear().toString(),
   );
-  const API_URL = process.env.REACT_APP_API_URL || "http://localhost:8000";
-
-  const downloadMonthlyPDF = async () => {
-    try {
-      const now = new Date();
-      const res = await api.get(
-        `/api/dashboard/export/monthly-pdf?month=${now.getMonth() + 1}&year=${now.getFullYear()}&download=true`,
-        { responseType: "blob" },
-      );
-      const url = window.URL.createObjectURL(
-        new Blob([res.data], { type: "application/pdf" }),
-      );
-      const link = document.createElement("a");
-      link.href = url;
-      link.setAttribute(
-        "download",
-        `hisobot_${now.getMonth() + 1}_${now.getFullYear()}.pdf`,
-      );
-      document.body.appendChild(link);
-      link.click();
-      link.remove();
-      window.URL.revokeObjectURL(url);
-      toast.success("PDF yuklandi! 📄");
-    } catch {
-      toast.error("PDF yuklab olishda xato!");
-    }
-  };
-
-  const viewMonthlyPDF = () => {
-    const now = new Date();
-    const token = localStorage.getItem("token");
-    window.open(
-      `${API_URL}/api/dashboard/export/monthly-pdf?month=${now.getMonth() + 1}&year=${now.getFullYear()}&download=false&token=${token}`,
-      "_blank",
-    );
-  };
-
-  const downloadAllPDF = async () => {
-    try {
-      const res = await api.get("/api/dashboard/export/all-pdf?download=true", {
-        responseType: "blob",
-      });
-      const url = window.URL.createObjectURL(
-        new Blob([res.data], { type: "application/pdf" }),
-      );
-      const link = document.createElement("a");
-      link.href = url;
-      link.setAttribute("download", "barcha_transactionlar.pdf");
-      document.body.appendChild(link);
-      link.click();
-      link.remove();
-      window.URL.revokeObjectURL(url);
-      toast.success("PDF yuklandi! 📄");
-    } catch {
-      toast.error("PDF yuklab olishda xato!");
-    }
-  };
-
-  const viewAllPDF = () => {
-    const token = localStorage.getItem("token");
-    window.open(
-      `${API_URL}/api/dashboard/export/all-pdf?download=false&token=${token}`,
-      "_blank",
-    );
-  };
-
-  const sendMonthlyReport = async () => {
-    try {
-      const res = await api.post("/api/dashboard/send-monthly-report");
-      if (res.data.error) {
-        toast.error(res.data.message);
-      } else {
-        toast.success(res.data.message);
-      }
-    } catch {
-      toast.error("Email yuborishda xato!");
-    }
-  };
 
   const [showMenu, setShowMenu] = useState(false);
   const [form, setForm] = useState({
@@ -287,33 +209,21 @@ export default function Dashboard() {
 
         {/* Desktop menu */}
         <div className="hidden md:flex items-center gap-5 flex-wrap">
-          <button
-            onClick={viewMonthlyPDF}
+          {/* <button
             className="px-3 py-2 bg-[#ffffff15] text-[#E5E5E5] border border-[#ffffff30] rounded-lg font-bold text-sm cursor-pointer hover:bg-[#FCA311] hover:text-[#14213D] transition-all"
-          >
-            👁️ Oylik PDF
-          </button>
-          <button
             onClick={downloadMonthlyPDF}
-            className="px-3 py-2 bg-[#ffffff15] text-[#E5E5E5] border border-[#ffffff30] rounded-lg font-bold text-sm cursor-pointer hover:bg-[#FCA311] hover:text-[#14213D] transition-all"
           >
-            📄 Yuklab olish
+            📄 Oylik PDF
           </button>
           <button
-            onClick={viewAllPDF}
             className="px-3 py-2 bg-[#ffffff15] text-[#E5E5E5] border border-[#ffffff30] rounded-lg font-bold text-sm cursor-pointer hover:bg-[#FCA311] hover:text-[#14213D] transition-all"
-          >
-            👁️ Barcha PDF
-          </button>
-          <button
             onClick={downloadAllPDF}
-            className="px-3 py-2 bg-[#ffffff15] text-[#E5E5E5] border border-[#ffffff30] rounded-lg font-bold text-sm cursor-pointer hover:bg-[#FCA311] hover:text-[#14213D] transition-all"
           >
-            📄 Barchasini yuklab
-          </button>
+            📄 Barcha PDF
+          </button> */}
           <button
+            className="px-3 py-2 bg-[#ffffff15] text-[#FCA311] border border-[#FCA311] rounded-lg font-bold text-sm no-underline hover:bg-[#FCA311] hover:text-[#14213D] transition-all"
             onClick={sendMonthlyReport}
-            className="px-3 py-2 bg-[#ffffff15] text-[#E5E5E5] border border-[#ffffff30] rounded-lg font-bold text-sm cursor-pointer hover:bg-[#FCA311] hover:text-[#14213D] transition-all"
           >
             📧 Hisobot
           </button>
