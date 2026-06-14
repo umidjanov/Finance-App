@@ -1735,7 +1735,7 @@
         "kind": 5,
         "importPath": "backend.app.main",
         "description": "backend.app.main",
-        "peekOfCode": "app = FastAPI(title=\"Finance App API\", docs_url=\"/api/docs\", redoc_url=\"/api/redoc\")\napp.state.limiter = limiter\napp.add_exception_handler(RateLimitExceeded, _rate_limit_exceeded_handler)\napp.add_middleware(SlowAPIMiddleware)\napp.add_middleware(\n    CORSMiddleware,\n    allow_origins=[\n        \"http://localhost:3000\",\n        \"https://finance-app-nj6h-c2x0qmsat-fayzullohumidjanovs-projects.vercel.app\",\n    ],",
+        "peekOfCode": "app = FastAPI(title=\"Finance App API\", docs_url=\"/api/docs\", redoc_url=\"/api/redoc\")\napp.state.limiter = limiter\napp.add_exception_handler(RateLimitExceeded, _rate_limit_exceeded_handler)\napp.add_middleware(SlowAPIMiddleware)\napp.add_middleware(\n    CORSMiddleware,\n    allow_origins=[\n        \"http://localhost:3000\",\n        \"https://finance-app-nj6h.vercel.app\",\n        \"https://finance-app-nj6h-c2x0qmsat-fayzullohumidjanovs-projects.vercel.app\",",
         "detail": "backend.app.main",
         "documentation": {}
     },
@@ -1744,7 +1744,7 @@
         "kind": 5,
         "importPath": "backend.app.main",
         "description": "backend.app.main",
-        "peekOfCode": "app.state.limiter = limiter\napp.add_exception_handler(RateLimitExceeded, _rate_limit_exceeded_handler)\napp.add_middleware(SlowAPIMiddleware)\napp.add_middleware(\n    CORSMiddleware,\n    allow_origins=[\n        \"http://localhost:3000\",\n        \"https://finance-app-nj6h-c2x0qmsat-fayzullohumidjanovs-projects.vercel.app\",\n    ],\n    allow_credentials=True,",
+        "peekOfCode": "app.state.limiter = limiter\napp.add_exception_handler(RateLimitExceeded, _rate_limit_exceeded_handler)\napp.add_middleware(SlowAPIMiddleware)\napp.add_middleware(\n    CORSMiddleware,\n    allow_origins=[\n        \"http://localhost:3000\",\n        \"https://finance-app-nj6h.vercel.app\",\n        \"https://finance-app-nj6h-c2x0qmsat-fayzullohumidjanovs-projects.vercel.app\",\n    ],",
         "detail": "backend.app.main",
         "documentation": {}
     },

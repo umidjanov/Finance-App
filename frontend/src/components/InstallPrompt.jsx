@@ -2,58 +2,161 @@ import { useState, useEffect } from "react";
 
 export default function InstallPrompt() {
   const [deferredPrompt, setDeferredPrompt] = useState(null);
-  const [showBtn, setShowBtn] = useState(false);
+  const [showAndroid, setShowAndroid] = useState(false);
+  const [showIOS, setShowIOS] = useState(false);
+  const [dismissed, setDismissed] = useState(false);
 
   useEffect(() => {
+    // Android/Chrome install prompt
     window.addEventListener("beforeinstallprompt", (e) => {
       e.preventDefault();
       setDeferredPrompt(e);
-      setShowBtn(true);
+      setShowAndroid(true);
     });
 
+    // iOS tekshirish
+    const isIOS = /iphone|ipad|ipod/i.test(navigator.userAgent);
+    const isInStandaloneMode = window.matchMedia(
+      "(display-mode: standalone)",
+    ).matches;
+    const isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
+
+    if (isIOS && !isInStandaloneMode && isSafari) {
+      setShowIOS(true);
+    }
+
     window.addEventListener("appinstalled", () => {
-      setShowBtn(false);
+      setShowAndroid(false);
       setDeferredPrompt(null);
     });
   }, []);
 
-  const handleInstall = async () => {
+  const handleAndroidInstall = async () => {
     if (!deferredPrompt) return;
     deferredPrompt.prompt();
     const { outcome } = await deferredPrompt.userChoice;
-    if (outcome === "accepted") {
-      setShowBtn(false);
-    }
+    if (outcome === "accepted") setShowAndroid(false);
     setDeferredPrompt(null);
   };
 
-  if (!showBtn) return null;
+  if (dismissed || (!showAndroid && !showIOS)) return null;
 
   return (
-    <div className="fixed bottom-4 left-4 right-4 sm:left-auto sm:right-4 sm:w-80 bg-[#1a2a4a] border border-[#FCA311] rounded-2xl p-4 shadow-2xl z-50">
-      <div className="flex items-start gap-3">
-        <span className="text-3xl">💰</span>
-        <div className="flex-1">
-          <p className="text-[#FCA311] font-bold text-sm mb-1">
-            Ilovani o'rnating!
+    <div
+      style={{
+        position: "fixed",
+        bottom: "16px",
+        left: "16px",
+        right: "16px",
+        background: "#1a2a4a",
+        border: "2px solid #FCA311",
+        borderRadius: "16px",
+        padding: "16px",
+        zIndex: 9999,
+        boxShadow: "0 8px 32px rgba(0,0,0,0.4)",
+      }}
+    >
+      <div style={{ display: "flex", alignItems: "flex-start", gap: "12px" }}>
+        <span style={{ fontSize: "32px" }}>💰</span>
+        <div style={{ flex: 1 }}>
+          <p
+            style={{
+              color: "#FCA311",
+              fontWeight: "bold",
+              margin: "0 0 4px 0",
+              fontSize: "14px",
+            }}
+          >
+            Finance App ni o'rnating!
           </p>
-          <p className="text-[#E5E5E5] text-xs opacity-70 mb-3">
-            Finance App ni telefoningizga o'rnating — tezroq va qulay!
-          </p>
-          <div className="flex gap-2">
-            <button
-              className="flex-1 py-2 bg-[#FCA311] text-[#14213D] rounded-lg font-bold text-xs border-none cursor-pointer"
-              onClick={handleInstall}
-            >
-              📲 O'rnatish
-            </button>
-            <button
-              className="py-2 px-3 bg-transparent text-[#E5E5E5] border border-[#ffffff30] rounded-lg text-xs cursor-pointer"
-              onClick={() => setShowBtn(false)}
-            >
-              ✕
-            </button>
-          </div>
+
+          {showAndroid && (
+            <>
+              <p
+                style={{
+                  color: "#E5E5E5",
+                  fontSize: "12px",
+                  margin: "0 0 12px 0",
+                  opacity: 0.8,
+                }}
+              >
+                Telefoningizga o'rnatib, tezroq ishlating!
+              </p>
+              <div style={{ display: "flex", gap: "8px" }}>
+                <button
+                  onClick={handleAndroidInstall}
+                  style={{
+                    flex: 1,
+                    padding: "10px",
+                    background: "#FCA311",
+                    color: "#14213D",
+                    border: "none",
+                    borderRadius: "10px",
+                    fontWeight: "bold",
+                    fontSize: "13px",
+                    cursor: "pointer",
+                  }}
+                >
+                  📲 O'rnatish
+                </button>
+                <button
+                  onClick={() => setDismissed(true)}
+                  style={{
+                    padding: "10px 14px",
+                    background: "transparent",
+                    color: "#E5E5E5",
+                    border: "1px solid #ffffff30",
+                    borderRadius: "10px",
+                    cursor: "pointer",
+                    fontSize: "13px",
+                  }}
+                >
+                  ✕
+                </button>
+              </div>
+            </>
+          )}
+
+          {showIOS && (
+            <>
+              <p
+                style={{
+                  color: "#E5E5E5",
+                  fontSize: "12px",
+                  margin: "0 0 8px 0",
+                  opacity: 0.8,
+                }}
+              >
+                Safari da o'rnatish uchun:
+              </p>
+              <p
+                style={{
+                  color: "#FCA311",
+                  fontSize: "13px",
+                  margin: "0 0 12px 0",
+                }}
+              >
+                1. Pastdagi <b>↑ Share</b> tugmasini bosing
+                <br />
+                2. <b>"Add to Home Screen"</b> tanlang
+              </p>
+              <button
+                onClick={() => setDismissed(true)}
+                style={{
+                  width: "100%",
+                  padding: "10px",
+                  background: "#FCA311",
+                  color: "#14213D",
+                  border: "none",
+                  borderRadius: "10px",
+                  fontWeight: "bold",
+                  cursor: "pointer",
+                }}
+              >
+                Tushunarli ✓
+              </button>
+            </>
+          )}
         </div>
       </div>
     </div>
