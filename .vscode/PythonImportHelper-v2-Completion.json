@@ -1447,7 +1447,16 @@
         "kind": 6,
         "importPath": "backend.app.routers.transactions",
         "description": "backend.app.routers.transactions",
-        "peekOfCode": "class TransactionCreate(BaseModel):\n    amount: float\n    type: TransactionType\n    category: str\n    description: Optional[str] = \"\"\n    month: Optional[int] = None\n    year: Optional[int] = None\nclass TransactionResponse(BaseModel):\n    id: int\n    amount: float",
+        "peekOfCode": "class TransactionCreate(BaseModel):\n    amount: float\n    type: TransactionType\n    category: str\n    description: Optional[str] = \"\"\n    month: Optional[int] = None\n    year: Optional[int] = None\nclass TransactionUpdate(BaseModel):\n    amount: float\n    type: TransactionType",
+        "detail": "backend.app.routers.transactions",
+        "documentation": {}
+    },
+    {
+        "label": "TransactionUpdate",
+        "kind": 6,
+        "importPath": "backend.app.routers.transactions",
+        "description": "backend.app.routers.transactions",
+        "peekOfCode": "class TransactionUpdate(BaseModel):\n    amount: float\n    type: TransactionType\n    category: str\n    description: Optional[str] = \"\"\nclass TransactionResponse(BaseModel):\n    id: int\n    amount: float\n    type: TransactionType\n    category: str",
         "detail": "backend.app.routers.transactions",
         "documentation": {}
     },
@@ -1488,6 +1497,15 @@
         "documentation": {}
     },
     {
+        "label": "update_transaction",
+        "kind": 2,
+        "importPath": "backend.app.routers.transactions",
+        "description": "backend.app.routers.transactions",
+        "peekOfCode": "def update_transaction(\n    transaction_id: int,\n    data: TransactionUpdate,\n    db: Session = Depends(get_db),\n    current_user: User = Depends(get_current_user),\n):\n    if data.amount <= 0:\n        raise HTTPException(status_code=400, detail=\"Summa 0 dan katta bo'lishi kerak!\")\n    if data.amount > 1_000_000_000:\n        raise HTTPException(status_code=400, detail=\"Summa juda katta!\")",
+        "detail": "backend.app.routers.transactions",
+        "documentation": {}
+    },
+    {
         "label": "delete_transaction",
         "kind": 2,
         "importPath": "backend.app.routers.transactions",
@@ -1510,7 +1528,7 @@
         "kind": 5,
         "importPath": "backend.app.routers.transactions",
         "description": "backend.app.routers.transactions",
-        "peekOfCode": "router = APIRouter()\nclass TransactionCreate(BaseModel):\n    amount: float\n    type: TransactionType\n    category: str\n    description: Optional[str] = \"\"\n    month: Optional[int] = None\n    year: Optional[int] = None\nclass TransactionResponse(BaseModel):\n    id: int",
+        "peekOfCode": "router = APIRouter()\nclass TransactionCreate(BaseModel):\n    amount: float\n    type: TransactionType\n    category: str\n    description: Optional[str] = \"\"\n    month: Optional[int] = None\n    year: Optional[int] = None\nclass TransactionUpdate(BaseModel):\n    amount: float",
         "detail": "backend.app.routers.transactions",
         "documentation": {}
     },

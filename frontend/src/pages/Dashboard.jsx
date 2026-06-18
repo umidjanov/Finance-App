@@ -20,6 +20,7 @@ export default function Dashboard() {
   const [transactions, setTransactions] = useState([]);
   const [user, setUser] = useState(null);
   const [showForm, setShowForm] = useState(false);
+  const [editId, setEditId] = useState(null);
   const [filterType, setFilterType] = useState("");
   const [filterMonth, setFilterMonth] = useState("");
   const [filterYear, setFilterYear] = useState(
@@ -110,20 +111,45 @@ export default function Dashboard() {
     loadTransactions();
   }, [loadAll, loadTransactions]);
 
-  const handleAddTransaction = async (e) => {
+  const openAddForm = () => {
+    setEditId(null);
+    setForm({ amount: "", type: "income", category: "", description: "" });
+    setShowForm(true);
+  };
+
+  const openEditForm = (t) => {
+    setEditId(t.id);
+    setForm({
+      amount: t.amount.toString(),
+      type: t.type,
+      category: t.category,
+      description: t.description || "",
+    });
+    setShowForm(true);
+  };
+
+  const closeForm = () => {
+    setShowForm(false);
+    setEditId(null);
+    setForm({ amount: "", type: "income", category: "", description: "" });
+  };
+
+  const handleSubmitTransaction = async (e) => {
     e.preventDefault();
     try {
-      await api.post("/api/transactions/", {
-        ...form,
-        amount: parseFloat(form.amount),
-      });
-      toast.success("Qo'shildi! ✅");
-      setShowForm(false);
-      setForm({ amount: "", type: "income", category: "", description: "" });
+      const payload = { ...form, amount: parseFloat(form.amount) };
+      if (editId) {
+        await api.put(`/api/transactions/${editId}`, payload);
+        toast.success("Yangilandi! ✅");
+      } else {
+        await api.post("/api/transactions/", payload);
+        toast.success("Qo'shildi! ✅");
+      }
+      closeForm();
       loadAll();
       loadTransactions();
     } catch (err) {
-      console.error("Transaction qo'shish xatosi:", err);
+      console.error("Transaction saqlash xatosi:", err);
       toast.error(err.response?.data?.detail || "Xato yuz berdi!");
     }
   };
@@ -243,7 +269,7 @@ export default function Dashboard() {
           </Link>
           <button
             className="px-3 py-2 bg-[#FCA311] text-[#14213D] border-none rounded-lg cursor-pointer font-bold text-sm hover:opacity-90"
-            onClick={() => setShowForm(true)}
+            onClick={openAddForm}
           >
             + Qo'shish
           </button>
@@ -259,7 +285,7 @@ export default function Dashboard() {
         <div className="flex md:hidden items-center gap-2">
           <button
             className="px-3 py-2 bg-[#FCA311] text-[#14213D] border-none rounded-lg cursor-pointer font-bold text-sm"
-            onClick={() => setShowForm(true)}
+            onClick={openAddForm}
           >
             + Qo'shish
           </button>
@@ -628,12 +654,22 @@ export default function Dashboard() {
                     {fmt(t.amount)} so'm
                   </td>
                   <td className="p-[12px_16px]">
-                    <button
-                      className="bg-transparent border-none cursor-pointer text-base opacity-50 hover:opacity-100 transition-opacity"
-                      onClick={() => handleDelete(t.id)}
-                    >
-                      🗑️
-                    </button>
+                    <div className="flex items-center gap-2">
+                      <button
+                        className="bg-transparent border-none cursor-pointer text-base opacity-50 hover:opacity-100 transition-opacity"
+                        onClick={() => openEditForm(t)}
+                        title="Tahrirlash"
+                      >
+                        ✏️
+                      </button>
+                      <button
+                        className="bg-transparent border-none cursor-pointer text-base opacity-50 hover:opacity-100 transition-opacity"
+                        onClick={() => handleDelete(t.id)}
+                        title="O'chirish"
+                      >
+                        🗑️
+                      </button>
+                    </div>
                   </td>
                 </tr>
               ))
@@ -646,16 +682,16 @@ export default function Dashboard() {
       {showForm && (
         <div
           className="fixed inset-0 bg-black/70 flex items-center justify-center z-[1000]"
-          onClick={() => setShowForm(false)}
+          onClick={closeForm}
         >
           <div
             className="bg-[#1a2a4a] rounded-2xl p-8 w-[400px] shadow-[0_25px_50px_rgba(0,0,0,0.5)] border border-[#FCA311]"
             onClick={(e) => e.stopPropagation()}
           >
             <h3 className="m-0 mb-6 text-xl text-[#FCA311] font-bold">
-              ➕ Yangi transaction
+              {editId ? "✏️ Transactionni tahrirlash" : "➕ Yangi transaction"}
             </h3>
-            <form onSubmit={handleAddTransaction}>
+            <form onSubmit={handleSubmitTransaction}>
               {[
                 { label: "Tur", type: "select", key: "type" },
                 { label: "Summa (so'm)", type: "number", key: "amount" },
@@ -713,12 +749,12 @@ export default function Dashboard() {
                   className="flex-1 px-5 py-[11px] bg-[#FCA311] text-[#14213D] border-none rounded-lg cursor-pointer font-bold hover:opacity-90"
                   type="submit"
                 >
-                  ✅ Qo'shish
+                  {editId ? "💾 Saqlash" : "✅ Qo'shish"}
                 </button>
                 <button
                   className="px-5 py-[11px] bg-transparent text-[#E5E5E5] border-2 border-[#E5E5E5] rounded-lg cursor-pointer font-bold hover:bg-[#E5E5E5] hover:text-[#14213D] transition-all"
                   type="button"
-                  onClick={() => setShowForm(false)}
+                  onClick={closeForm}
                 >
                   Bekor
                 </button>

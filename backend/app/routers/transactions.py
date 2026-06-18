@@ -21,6 +21,13 @@ class TransactionCreate(BaseModel):
     description: Optional[str] = ""
     month: Optional[int] = None
     year: Optional[int] = None
+ 
+
+class TransactionUpdate(BaseModel):
+    amount: float
+    type: TransactionType
+    category: str
+    description: Optional[str] = ""
 
 
 class TransactionResponse(BaseModel):
@@ -124,6 +131,50 @@ def get_transaction(
     )
     if not transaction:
         raise HTTPException(status_code=404, detail="Transaction topilmadi!")
+    return transaction
+
+
+@router.put("/{transaction_id}", response_model=TransactionResponse)
+def update_transaction(
+    transaction_id: int,
+    data: TransactionUpdate,
+    db: Session = Depends(get_db),
+    current_user: User = Depends(get_current_user),
+):
+    if data.amount <= 0:
+        raise HTTPException(status_code=400, detail="Summa 0 dan katta bo'lishi kerak!")
+    if data.amount > 1_000_000_000:
+        raise HTTPException(status_code=400, detail="Summa juda katta!")
+
+    transaction = (
+        db.query(Transaction)
+        .filter(
+            Transaction.id == transaction_id, Transaction.user_id == current_user.id
+        )
+        .first()
+    )
+    if not transaction:
+        raise HTTPException(status_code=404, detail="Transaction topilmadi!")
+
+    # Eski transaction balansga ta'sirini bekor qilish
+    if transaction.type == TransactionType.INCOME:
+        current_user.balance -= transaction.amount
+    else:
+        current_user.balance += transaction.amount
+
+    # Yangi qiymatlarni qo'llash
+    transaction.amount = data.amount
+    transaction.type = data.type
+    transaction.category = sanitize_string(data.category, 50)
+    transaction.description = sanitize_string(data.description or "", 500)
+
+    if data.type == TransactionType.INCOME:
+        current_user.balance += data.amount
+    else:
+        current_user.balance -= data.amount
+
+    db.commit()
+    db.refresh(transaction)
     return transaction
 
 
